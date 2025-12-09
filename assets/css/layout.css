@@ -435,3 +435,8 @@ body.projects-page {
   background-position: center;
   z-index: 1;
 }
+
+.experience-area {
+  background-color: #e3e7f5; /* #cbd1ea pero un poco más claro */
+  padding: 4rem 0 5rem;
+}

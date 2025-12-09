@@ -436,7 +436,9 @@ body.projects-page {
   z-index: 1;
 }
 
+/* Banda de fondo entre carrusel y want-to-know-more */
 .experience-area {
-  background-color: #e3e7f5; /* #cbd1ea pero un poco más claro */
-  padding: 4rem 0 5rem;
+  background-color: #e3e7f5; /* azul clarito */
+  padding-top: 3rem;
+  padding-bottom: 5rem;
 }

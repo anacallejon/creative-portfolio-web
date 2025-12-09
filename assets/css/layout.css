@@ -442,3 +442,77 @@ body.projects-page {
   padding-top: 3rem;
   padding-bottom: 5rem;
 }
+
+/* ==============================
+   HERO RESPONSIVE
+   ============================== */
+
+/* TABLET (≤ 1024px): misma composición, pero bastante más pequeño */
+@media (max-width: 1024px) {
+  .hero {
+    min-height: 75vh;
+  }
+
+  .hero-text {
+    position: absolute;
+    left: 48px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: left;
+  }
+
+  .hero-name {
+    font-size: 4.2rem; /* antes 7rem */
+    line-height: 0.95;
+  }
+
+  .hero-tagline {
+    font-size: 1.4rem; /* antes 1.9rem */
+    margin-top: 0.8rem;
+  }
+
+  .hero-job {
+    font-size: 1.3rem; /* antes 2rem */
+    margin-top: 0.2rem;
+    line-height: 1;
+  }
+}
+
+/* MÓVIL (≤ 768px): aún más pequeño y centrado */
+@media (max-width: 768px) {
+  .hero--fixed-parallax {
+    background-attachment: scroll;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 120px 20px 48px; /* menos alto y menos padding */
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .hero-text {
+    position: static;
+    left: auto;
+    top: auto;
+    transform: none;
+    text-align: center;
+    pointer-events: auto;
+  }
+
+  .hero-name {
+    font-size: 2.2rem; /* bastante pequeño ya */
+    line-height: 1.05;
+  }
+
+  .hero-tagline {
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+  }
+
+  .hero-job {
+    font-size: 1rem;
+    margin-top: 0.25rem;
+    line-height: 1.1;
+  }
+}

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About – Portfolio Template</title>
+
+    <!-- Tipografías de Google -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200;300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS general compartido -->
+    <link rel="stylesheet" href="assets/css/index.css" />
+  </head>
+
+  <body>
+    <!-- Cursor personalizado -->
+    <div class="custom-cursor"></div>
+
+    <!-- NAVIGATION BAR: menú principal de la página About -->
+    <nav class="navbar navbar-about">
+      <!-- Logo / nombre en la barra -->
+      <img
+        src="assets/img/page_name1.png"
+        alt="Logo"
+        class="nav-logo-image nav-logo-about"
+      />
+
+      <!-- Enlaces de navegación -->
+      <ul class="nav-links">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./projects.html">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- HERO SECTION: cabecera con nombre y tagline -->
+    <header class="hero hero--fixed-parallax">
+      <div class="hero-text">
+        <h1 class="hero-name">Ana<br />Callejón</h1>
+        <p class="hero-tagline">My Experience in</p>
+        <p class="hero-job">Multimedia and Graphic Design</p>
+      </div>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="main-content">
+      <!-- CARRUSEL DOBLE DE IMÁGENES (mismo componente que en home) -->
+      <section class="intro-section">
+        <div class="carousel-double">
+          <!-- FILA SUPERIOR -->
+          <div class="carousel-row carousel-row--top">
+            <div class="carousel-track">
+              <!-- Primera tanda -->
+              <article class="carousel-item">
+                <img src="./assets/img/vinilo2.png" alt="image 1" />
+              </article>
+              <article class="carousel-item">
+                <img src="./assets/img/habitacion3.png" alt="image 2" />
+              </article>
+              <article class="carousel-item">
+                <img src="./assets/img/book_mockup2.png" alt="image 3" />
+              </article>
+              <article class="carousel-item">
+                <img src="./assets/img/Extrusion1.png" alt="image 4" />
+              </article>
+              <article class="carousel-item">
+                <img src="./assets/img/habitacion5.png" alt="image 5" />
+              </article>
+              <article class="carousel-item">
+                <img src="./assets/img/habitacion6.jpg" alt="image 6" />
+              </article>
+
+              <!-- Segunda tanda (idéntica para efecto de bucle) -->
+              <article class="carousel-item">
+                <img src="./assets/img/habitacion1.png" alt="image 1" />
+              </article>
+              <article class="carousel-item">
+                <img src="./assets/img/habitacion2.png" alt="image 2" />
+              </article>
+              <article class="carousel-item">
+                <img src="./assets/img/habitacion3.png" alt="image 3" />
+              </article>
+              <article class="carousel-item">
+                <img src="./assets/img/habitacion4.png" alt="image 4" />
+              </article>
+              <article class="carousel-item">
+                <img src="./assets/img/habitacion5.png" alt="image 5" />
+              </article>
+              <article class="carousel-item">
+                <img src="./assets/img/habitacion6.jpg" alt="image 6" />
+              </article>
+            </div>
+          </div>
+
+          <!-- FILA INFERIOR -->
+          <div class="carousel-row carousel-row--bottom">
+            <div class="carousel-track">
+              <!-- Primera tanda -->
+              <article class="carousel-item">
+                <img src="./assets/img/lamina_ill1.png" alt="image 7" />
+              </article>
+              <article class="carousel-item">
+                <img src="./assets/img/Final_mockup1.png" alt="image 8" />
+              </article>
+              <article class="carousel-item">
+                <img src="./assets/img/habitacion4.png" alt="image 9" />
+              </article>
+              <article class="carousel-item">
+                <img src="./assets/img/muestrario2.png" alt="image 10" />
+              </article>
+              <article class="carousel-item">
+                <img src="./assets/img/habitacion2.png" alt="image 11" />
+              </article>
+              <article class="carousel-item">
+                <img src="./assets/img/habitacion1.png" alt="image 12" />
+              </article>
+
+              <!-- Segunda tanda (idéntica) -->
+              <article class="carousel-item">
+                <img src="./assets/img/habitacion6.jpg" alt="image 7" />
+              </article>
+              <article class="carousel-item">
+                <img src="./assets/img/habitacion5.png" alt="image 8" />
+              </article>
+              <article class="carousel-item">
+                <img src="./assets/img/habitacion4.png" alt="image 9" />
+              </article>
+              <article class="carousel-item">
+                <img src="./assets/img/habitacion3.png" alt="image 10" />
+              </article>
+              <article class="carousel-item">
+                <img src="./assets/img/habitacion2.png" alt="image 11" />
+              </article>
+              <article class="carousel-item">
+                <img src="./assets/img/habitacion1.png" alt="image 12" />
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========= BLOQUE EXPERIENCE (fondo azul claro) ========= -->
+      <section class="experience-area">
+        <!-- SUBTÍTULO / INTRO SUPERIOR -->
+        <section class="experience-header">
+          <p class="experience-subtitle">
+            A summary of my previous work, as well as my education and relevant
+            information about myself.
+          </p>
+        </section>
+
+        <!-- ABOUT ME BOX (resumen perfil) -->
+        <section id="exp-about" class="content-box">
+          <h3 class="box-title">About Me</h3>
+
+          <div class="box-text">
+            <p>
+              I'm a <strong>Graphic and Multimedia Design</strong> student,
+              currently based in <strong>Madrid</strong>, after three years
+              studying in Barcelona. I'm passionate about building and
+              communicating through visual design — from shaping brand
+              identities to crafting editorial pieces.
+            </p>
+            <p>
+              I'm looking for new opportunities to keep learning, expand my
+              vision and explore different creative fields while growing
+              professionally and personally. Alongside my studies, I've
+              developed a strong interest in editorial design and layout, color
+              theory, and typography. Beyond digital work, I enjoy craft-related
+              projects and handmade layouts, which help me stay connected to the
+              tactile side of design.
+            </p>
+          </div>
+        </section>
+
+        <!-- SKILLS BOX (idiomas, soft skills y técnicas) -->
+        <section id="exp-skills" class="content-box">
+          <h3 class="box-title">Skills</h3>
+
+          <div class="box-text box-columns">
+            <!-- Columna de idiomas + habilidades interpersonales -->
+            <div class="box-column">
+              <h4>Languages</h4>
+              <ul>
+                <li>Spanish · Native</li>
+                <li>English · Advanced (CAE C1)</li>
+                <li>Catalan · Advanced</li>
+              </ul>
+
+              <h4>Interpersonal skills</h4>
+              <ul>
+                <li>Strong communication and teamwork abilities</li>
+                <li>Project management</li>
+                <li>Social media management</li>
+                <li>Conflict resolution</li>
+              </ul>
+            </div>
+
+            <!-- Columna de skills técnicos con iconos de nivel -->
+            <div class="box-column skills-column-icons">
+              <h4>Technical and artistic skills</h4>
+
+              <ul class="skills-icon-list">
+                <li>
+                  <img
+                    src="assets/img/nivel_rojo_4.5.png"
+                    alt=""
+                    class="skill-icon"
+                  />
+                  Drawing
+                </li>
+
+                <li>
+                  <img
+                    src="assets/img/nivel_rojo_4.png"
+                    alt=""
+                    class="skill-icon"
+                  />
+                  Adobe Creative Suite
+                </li>
+
+                <li>
+                  <img
+                    src="assets/img/nivel_rojo_5.png"
+                    alt=""
+                    class="skill-icon"
+                  />
+                  Microsoft Office Suite
+                </li>
+
+                <li>
+                  <img
+                    src="assets/img/nivel_rojo_5.png"
+                    alt=""
+                    class="skill-icon"
+                  />
+                  Project development
+                </li>
+
+                <li>
+                  <img
+                    src="assets/img/nivel_rojo_4.5.png"
+                    alt=""
+                    class="skill-icon"
+                  />
+                  Web design & development
+                </li>
+
+                <li>
+                  <img
+                    src="assets/img/nivel_rojo_3.5.png"
+                    alt=""
+                    class="skill-icon"
+                  />
+                  2D / 3D
+                </li>
+
+                <li>
+                  <img
+                    src="assets/img/nivel_rojo_5.png"
+                    alt=""
+                    class="skill-icon"
+                  />
+                  Crafting & analog processes
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- EDUCATION BOX (trayectoria académica) -->
+        <section id="exp-education" class="content-box">
+          <h3 class="box-title">Education</h3>
+
+          <div class="box-text">
+            <p>
+              I studied at <strong>Colegio Estudio</strong> in Madrid from
+              elementary through high school. I began my design degree at
+              <strong>EINA</strong> in Barcelona and later returned to Madrid to
+              continue my studies at <strong>UDIT</strong>, where I'm currently
+              completing my program.
+            </p>
+          </div>
+        </section>
+
+        <!-- WORK EXPERIENCE BOX (experiencia laboral y voluntariado) -->
+        <section id="exp-work" class="content-box">
+          <h3 class="box-title">Work Experience</h3>
+
+          <div class="box-text">
+            <p>
+              I've worked as a personal tutor, assisted in catering and events,
+              and collaborated with individual clients on design projects. I
+              started at <strong>Tintoremus Studio</strong> as an intern and
+              later joined the team as a designer. I'm currently volunteering at
+              <strong>CRIS Contra el Cáncer</strong>, supporting their visual
+              communication.
+            </p>
+          </div>
+        </section>
+      </section>
+      <!-- ========= FIN BLOQUE EXPERIENCE ========= -->
+
+      <!-- BLOQUE CTA: enlace directo a contacto -->
+      <section class="about-section about--parallax" id="about">
+        <div class="about-content">
+          <h2 class="section-title about-title">Want to know more?</h2>
+
+          <a href="#contact" class="about-btn">
+            Contact Me!
+            <img
+              src="assets/img/flecha_blanco.png"
+              alt=""
+              class="about-btn-icon"
+            />
+          </a>
+        </div>
+      </section>
+
+      <!-- SECCIÓN DE CONTACTO -->
+      <section class="contact-section" id="contact">
+        <div class="contact-box">
+          <h2 class="section-title contact-title">Contact</h2>
+
+          <p class="contact-text">
+            If you want to collaborate, ask something, or just say hi, feel free
+            to reach out at <span class="color">anacalen03@gmail.com</span>.
+            Otherwise, leave your info here and I'll get back to you :)
+          </p>
+
+          <!-- Formulario sencillo de contacto (solo email) -->
+          <form class="contact-form">
+            <label for="email" class="contact-label">Your email</label>
+
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="contact-input"
+              placeholder="name@example.com"
+              required
+            />
+
+            <button type="submit" class="contact-btn">Send</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER GENERAL -->
+    <footer class="site-footer">
+      <p>© 2025 Ana Callejón Alén</p>
+    </footer>
+
+    <!-- JS general (interacciones, cursor, carrusel, etc.) -->
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

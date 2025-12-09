@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home – Portfolio Template</title>
+
+    <!-- Tipografías de Google -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200;300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS general de la home -->
+    <link rel="stylesheet" href="assets/css/index.css" />
+  </head>
+
+  <body>
+    <!-- Cursor personalizado -->
+    <div class="custom-cursor"></div>
+
+    <!-- NAVIGATION BAR: menú principal superior -->
+    <nav class="navbar navbar-home">
+      <ul class="nav-links">
+        <!-- Enlace a la home -->
+        <li><a href="#">Home</a></li>
+        <!-- Enlace a página de proyectos / portfolio -->
+        <li><a href="./projects.html">Portfolio</a></li>
+        <!-- Enlace interno a sección About -->
+        <li><a href="#about">About</a></li>
+        <!-- Enlace interno a sección Contact -->
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- HERO SECTION: portada con nombre y tagline -->
+    <header class="hero hero--fixed-parallax">
+      <div class="hero-text">
+        <h1 class="hero-name">Ana<br />Callejón</h1>
+        <p class="hero-tagline">Creative Portfolio</p>
+        <p class="hero-job">Graphic Design</p>
+      </div>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="main-content">
+      <!-- Sección de proyectos destacados -->
+      <section class="intro-section">
+        <h2 class="section-title">Featured Projects</h2>
+
+        <!-- Carrusel doble (dos filas de imágenes en movimiento) -->
+        <div class="carousel-double">
+          <!-- FILA SUPERIOR -->
+          <div class="carousel-row carousel-row--top">
+            <!-- Pista que contiene todos los ítems del carrusel -->
+            <div class="carousel-track">
+              <!-- Primera tanda de imágenes -->
+              <article class="carousel-item">
+                <img src="./assets/img/vinilo2.png" alt="image 1" />
+              </article>
+              <article class="carousel-item">
+                <img src="./assets/img/habitacion3.png" alt="image 2" />
+              </article>
+              <article class="carousel-item">
+                <img src="./assets/img/book_mockup2.png" alt="image 3" />
+              </article>
+              <article class="carousel-item">
+                <img src="./assets/img/Extrusion1.png" alt="image 4" />
+              </article>
+              <article class="carousel-item">
+                <img src="./assets/img/habitacion5.png" alt="image 5" />
+              </article>
+              <article class="carousel-item">
+                <img src="./assets/img/habitacion6.jpg" alt="image 6" />
+              </article>
+
+              <!-- Segunda tanda (repetida para efecto de bucle) -->
+              <article class="carousel-item">
+                <img src="./assets/img/habitacion1.png" alt="image 1" />
+              </article>
+              <article class="carousel-item">
+                <img src="./assets/img/habitacion2.png" alt="image 2" />
+              </article>
+              <article class="carousel-item">
+                <img src="./assets/img/habitacion3.png" alt="image 3" />
+              </article>
+              <article class="carousel-item">
+                <img src="./assets/img/habitacion4.png" alt="image 4" />
+              </article>
+              <article class="carousel-item">
+                <img src="./assets/img/habitacion5.png" alt="image 5" />
+              </article>
+              <article class="carousel-item">
+                <img src="./assets/img/habitacion6.jpg" alt="image 6" />
+              </article>
+            </div>
+          </div>
+
+          <!-- FILA INFERIOR -->
+          <div class="carousel-row carousel-row--bottom">
+            <!-- Segunda pista con otra tanda de imágenes -->
+            <div class="carousel-track">
+              <!-- Primera tanda de imágenes -->
+              <article class="carousel-item">
+                <img src="./assets/img/lamina_ill1.png" alt="image 7" />
+              </article>
+              <article class="carousel-item">
+                <img src="./assets/img/Final_mockup1.png" alt="image 8" />
+              </article>
+              <article class="carousel-item">
+                <img src="./assets/img/habitacion4.png" alt="image 9" />
+              </article>
+              <article class="carousel-item">
+                <img src="./assets/img/muestrario2.png" alt="image 10" />
+              </article>
+              <article class="carousel-item">
+                <img src="./assets/img/habitacion2.png" alt="image 11" />
+              </article>
+              <article class="carousel-item">
+                <img src="./assets/img/habitacion1.png" alt="image 12" />
+              </article>
+
+              <!-- Segunda tanda (repetida para continuidad) -->
+              <article class="carousel-item">
+                <img src="./assets/img/habitacion6.jpg" alt="image 7" />
+              </article>
+              <article class="carousel-item">
+                <img src="./assets/img/habitacion5.png" alt="image 8" />
+              </article>
+              <article class="carousel-item">
+                <img src="./assets/img/habitacion4.png" alt="image 9" />
+              </article>
+              <article class="carousel-item">
+                <img src="./assets/img/habitacion3.png" alt="image 10" />
+              </article>
+              <article class="carousel-item">
+                <img src="./assets/img/habitacion2.png" alt="image 11" />
+              </article>
+              <article class="carousel-item">
+                <img src="./assets/img/habitacion1.png" alt="image 12" />
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sección About con efecto parallax -->
+      <section class="about-section about--parallax" id="about">
+        <div class="about-content">
+          <h2 class="section-title about-title">About Me</h2>
+
+          <!-- Texto de presentación personal -->
+          <p class="about-text">
+            I am Ana Callejón, a creative designer working across graphic,
+            digital and multimedia projects. This portfolio is a curated
+            selection of experiments, client work and personal explorations.
+            <br />
+            <br />
+            I’m a Graphic and Multimedia Design student currently based in
+            Madrid, after three formative years studying in Barcelona. My work
+            is rooted in visual communication — from brand identities to
+            editorial design — with a strong interest in typography, colour
+            theory and the intersection between digital and handcrafted
+            processes.
+            <br />
+            <br />
+            My experience includes an internship at a design studio where I
+            later joined the team, freelance collaborations with clients, and
+            volunteer work supporting visual communication in different
+            institutions. Outside the digital space, I enjoy analog
+            illustration, bookbinding and craft-related projects that keep me
+            connected to materials and slower creative methods. Music and visual
+            culture are ongoing influences in my process. This portfolio brings
+            together the projects that have shaped my growth and direction as a
+            designer.
+          </p>
+
+          <!-- Botón que lleva a la página de experiencia / about extendido -->
+          <a href="./about.html" class="about-btn">
+            Experience
+            <img
+              src="assets/img/flecha_blanco.png"
+              alt=""
+              class="about-btn-icon"
+            />
+          </a>
+        </div>
+      </section>
+
+      <!-- Sección de contacto -->
+      <section class="contact-section" id="contact">
+        <div class="contact-box">
+          <h2 class="section-title contact-title">Contact</h2>
+
+          <!-- Texto explicativo de contacto -->
+          <p class="contact-text">
+            If you want to collaborate, ask something, or just say hi, feel free
+            to reach out at <span class="color">anacalen03@gmail.com</span>.
+            Otherwise, leave your info here and I'll get back to you :)
+          </p>
+
+          <!-- Formulario de contacto básico (solo email) -->
+          <form class="contact-form">
+            <label for="email" class="contact-label">Your email</label>
+
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="contact-input"
+              placeholder="name@example.com"
+              required
+            />
+
+            <!-- Botón de envío del formulario -->
+            <button type="submit" class="contact-btn">Send</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer con créditos / derechos -->
+    <footer class="site-footer">
+      <p>© 2025 Ana Callejón Alén</p>
+    </footer>
+
+    <!-- JS principal (interacciones, carrusel, cursor, etc.) -->
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

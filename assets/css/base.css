@@ -1,0 +1,75 @@
+/* =========================================
+   RESET BÁSICO
+   ========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================================
+     VARIABLES GLOBALES
+     (se dejan juntas para poder ampliarlas)
+     ========================================= */
+:root {
+  /* Tipografías */
+  --font-base: system-ui, sans-serif;
+  --font-heading: system-ui, sans-serif;
+
+  /* Colores */
+  --color-bg: #f5f5f5;
+  --color-text: #111111;
+  --color-accent: #000000;
+  --color-nav-bg: #ffffff;
+  --color-hero-text: #111111;
+
+  /* Overlays y efectos */
+  --color-hero-overlay: rgba(0, 0, 0, 0.2);
+
+  /* Espaciados (mantengo los que tenías en ambos bloques) */
+  --spacing-section: 4rem;
+  --spacing-container: 90%;
+  --spacing-max-width: 1200px;
+}
+
+/* =========================================
+     BASE DEL DOCUMENTO
+     ========================================= */
+html {
+  min-height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Unbounded", sans-serif;
+  font-weight: 400;
+  color: #222222;
+  line-height: 1.6;
+}
+
+/* Links y listas sin decoración */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* =========================================
+     ESTILO ESPECÍFICO PARA LA PÁGINA PROJECTS
+     ========================================= */
+
+/* Fondo azul únicamente en la página de proyectos */
+body.projects-page {
+  background-color: #b2c1ed !important;
+  min-height: 100vh;
+}
+
+/* Secciones que deben mantenerse transparentes en Projects */
+.projects-page .cards-section,
+.projects-page .site-footer,
+.projects-page .main-content {
+  background-color: transparent !important;
+}

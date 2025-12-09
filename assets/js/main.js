@@ -1,11 +1,15 @@
+// JS principal para cursor personalizado, modales y navbar About
 document.addEventListener("DOMContentLoaded", () => {
-  // ===== CUSTOM CURSOR =====
+  // ==============================
+  // CUSTOM CURSOR
+  // ==============================
   const cursor = document.querySelector(".custom-cursor");
 
   if (cursor) {
     const COLOR1 = "rgb(178, 193, 237)"; // #b2c1ed
     const COLOR2 = "rgb(139, 147, 188)"; // #8b93bc
 
+    // Mover el cursor y cambiar color según el fondo
     document.addEventListener("mousemove", (e) => {
       cursor.style.opacity = "1";
       cursor.style.top = `${e.clientY}px`;
@@ -54,6 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
+    // Ocultar cursor al salir de la ventana
     document.addEventListener("mouseleave", () => {
       cursor.style.opacity = "0";
     });
@@ -68,22 +73,27 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ===== MODAL DE PROYECTOS (tu código actual debajo, sin tocar) =====
+  // ==============================
+  // MODAL DE PROYECTOS (projects.html)
+  // ==============================
   if (document.body.classList.contains("projects-page")) {
     const cards = document.querySelectorAll(".card");
     const backdrop = document.querySelector(".project-modal-backdrop");
     const modalText = document.querySelector(".project-modal-text");
     const modalImages = document.querySelector(".project-modal-images");
 
+    // Solo si existen todos los elementos necesarios
     if (backdrop && cards.length > 0 && modalText && modalImages) {
+      // Abrir modal al hacer click en cada card
       cards.forEach((card) => {
         card.addEventListener("click", () => {
           const projectId = card.getAttribute("data-project");
           const detail = projectId ? document.getElementById(projectId) : null;
 
-          // Texto largo o fallback
+          // Reset contenido de texto
           modalText.innerHTML = "";
 
+          // Texto largo desde bloque oculto o fallback desde la card
           if (detail) {
             const detailTitle = detail.querySelector("h3");
             const detailText = detail.querySelector("p");
@@ -96,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (textEl) modalText.appendChild(textEl.cloneNode(true));
           }
 
-          // Imágenes
+          // Imágenes del proyecto
           modalImages.innerHTML = "";
           const dataImages = card.getAttribute("data-images");
           const imgEl = card.querySelector(".card-img");
@@ -115,11 +125,13 @@ document.addEventListener("DOMContentLoaded", () => {
             modalImages.appendChild(img);
           });
 
+          // Mostrar modal + bloquear scroll de fondo
           backdrop.classList.add("is-open");
           document.body.classList.add("modal-open");
         });
       });
 
+      // Cerrar modal haciendo click en el fondo oscuro
       backdrop.addEventListener("click", (e) => {
         if (e.target === backdrop) {
           backdrop.classList.remove("is-open");
@@ -129,18 +141,21 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // ==============================
+  // NAVBAR ABOUT: APARICIÓN DE LOGO AL SCROLL
+  // ==============================
   const aboutNavbar = document.querySelector(".navbar-about");
   const introSection = document.querySelector(".intro-section");
 
-  // Solo ejecutar en about.html
+  // Solo ejecutar en about.html (cuando existe la combinación)
   if (aboutNavbar && introSection) {
     window.addEventListener("scroll", () => {
       const introTop = introSection.getBoundingClientRect().top;
 
-      /*  
+      /*
         Si el borde superior de intro-section está
         en el borde superior del viewport (o ha subido ya),
-        entonces activamos la versión con logo.
+        activamos la versión con logo (.scrolled).
       */
       if (introTop <= 0) {
         aboutNavbar.classList.add("scrolled");

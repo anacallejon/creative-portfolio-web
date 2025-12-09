@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Projects</title>
 
-    <!-- Tipografías de Google -->
     <link
       href="https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap"
       rel="stylesheet"
@@ -15,20 +14,16 @@
       rel="stylesheet"
     />
 
-    <!-- CSS general compartido con la home -->
+    <!-- CSS general -->
     <link rel="stylesheet" href="assets/css/index.css" />
   </head>
-  <!-- Clase específica para estilos de la página de proyectos -->
   <body class="projects-page">
-    <!-- Cursor personalizado -->
     <div class="custom-cursor"></div>
 
-    <!-- NAVBAR FIJA EN LA PARTE SUPERIOR -->
+    <!-- NAVBAR SIEMPRE ARRIBA -->
     <nav class="navbar navbar-projects">
-      <!-- Logo / nombre de la página en la barra -->
       <img src="assets/img/page_name1.png" class="nav-logo-image" />
 
-      <!-- Enlaces de navegación principales -->
       <ul class="nav-links">
         <li><a href="./index.html">Home</a></li>
         <li><a href="#about">About</a></li>
@@ -36,7 +31,7 @@
       </ul>
     </nav>
 
-    <!-- HERO / PARALLAX SUPERIOR DE LA PÁGINA DE PROYECTOS -->
+    <!-- HERO / PARALLAX -->
     <header class="top-parallax">
       <div class="projects-hero-text">
         <h1 class="projects-hero-title">My work</h1>
@@ -47,12 +42,11 @@
       </div>
     </header>
 
-    <!-- SECCIÓN PRINCIPAL DE TARJETAS DE PROYECTOS -->
     <section class="cards-section">
       <div class="cards-grid">
-        <!-- COLUMNA IZQUIERDA DE PROYECTOS -->
+        <!-- COLUMNA IZQUIERDA -->
         <div class="cards-column left-column">
-          <!-- Tarjeta: Project 3D Diorama -->
+          <!-- Project 3D Diorama -->
           <article
             class="card"
             data-project="project-3d-diorama"
@@ -68,7 +62,7 @@
             </div>
           </article>
 
-          <!-- Tarjeta: Project B -->
+          <!-- Project B -->
           <article
             class="card"
             data-project="project-b"
@@ -82,7 +76,7 @@
             </div>
           </article>
 
-          <!-- Tarjeta: Project C -->
+          <!-- Project C -->
           <article
             class="card"
             data-project="project-c"
@@ -99,9 +93,8 @@
           </article>
         </div>
 
-        <!-- COLUMNA DERECHA DE PROYECTOS -->
+        <!-- COLUMNA DERECHA -->
         <div class="cards-column right-column">
-          <!-- Tarjeta: Project D -->
           <article
             class="card"
             data-project="project-d"
@@ -115,7 +108,6 @@
             </div>
           </article>
 
-          <!-- Tarjeta: Project E -->
           <article
             class="card"
             data-project="project-e"
@@ -129,13 +121,11 @@
             </div>
           </article>
 
-          <!-- Tarjeta: Project F -->
           <article
             class="card"
             data-project="project-f"
             data-images="assets/img/proj1_a.png, assets/img/proj1_b.png, assets/img/proj1_c.png"
           >
-            <!-- Ojo: ruta diferente (assets/images) tal cual en el original -->
             <img src="assets/images/miImagen.png" alt="" class="card-img" />
 
             <div class="card-content">
@@ -147,9 +137,9 @@
       </div>
     </section>
 
-    <!-- BLOQUE DE DETALLES COMPLETOS DE PROYECTOS (TEXTO) — OCULTO POR DEFECTO -->
+    <!-- DETALLES COMPLETOS DE PROYECTOS — OCULTOS -->
     <div class="project-details" hidden>
-      <!-- Detalle: 3D Diorama -->
+      <!-- 3D DIORAMA -->
       <div id="project-3d-diorama">
         <h3>3D Diorama – full project</h3>
         <p>
@@ -162,7 +152,7 @@
         </p>
       </div>
 
-      <!-- Detalle: Project B -->
+      <!-- Project B -->
       <div id="project-b">
         <h3>Exploración visual – full project</h3>
         <p>
@@ -171,7 +161,7 @@
         </p>
       </div>
 
-      <!-- Detalle: Project C -->
+      <!-- Project C -->
       <div id="project-c">
         <h3>Experimental piece – full view</h3>
         <p>
@@ -180,7 +170,7 @@
         </p>
       </div>
 
-      <!-- Detalle: Project D -->
+      <!-- Project D -->
       <div id="project-d">
         <h3>Título A – extended description</h3>
         <p>
@@ -189,7 +179,7 @@
         </p>
       </div>
 
-      <!-- Detalle: Project E -->
+      <!-- Project E -->
       <div id="project-e">
         <h3>Título B – extended description</h3>
         <p>
@@ -198,7 +188,7 @@
         </p>
       </div>
 
-      <!-- Detalle: Project F -->
+      <!-- Project F -->
       <div id="project-f">
         <h3>Título C – extended description</h3>
         <p>
@@ -208,7 +198,6 @@
       </div>
     </div>
 
-    <!-- SECCIÓN ABOUT REUTILIZADA (MISMO BLOQUE QUE EN HOME) -->
     <section class="about-section about--parallax" id="about">
       <div class="about-content">
         <h2 class="section-title about-title">About Me</h2>
@@ -234,7 +223,6 @@
           influences in my process. This portfolio brings together the projects
           that have shaped my growth and direction as a designer.
         </p>
-        <!-- Botón para ir a la página de experiencia / about extendido -->
         <a href="./about.html" class="about-btn">
           Experience
           <img
@@ -246,7 +234,6 @@
       </div>
     </section>
 
-    <!-- SECCIÓN DE CONTACTO REUTILIZADA -->
     <section class="contact-section" id="contact">
       <div class="contact-box">
         <h2 class="section-title contact-title">Contact</h2>
@@ -257,7 +244,6 @@
           Otherwise, leave your info here and I'll get back to you :)
         </p>
 
-        <!-- Formulario sencillo de contacto (solo email) -->
         <form class="contact-form">
           <label for="email" class="contact-label">Your email</label>
 
@@ -275,20 +261,17 @@
       </div>
     </section>
 
-    <!-- PIE DE PÁGINA CON CRÉDITOS -->
     <footer class="site-footer">
       <p>© 2025 Ana Callejón Alén</p>
     </footer>
 
-    <!-- MODAL PARA VER PROYECTOS EN DETALLE (TEXTO + IMÁGENES) -->
+    <!-- MODAL PROYECTO -->
     <div class="project-modal-backdrop">
       <div class="project-modal">
         <div class="project-modal-content">
-          <!-- Columna izquierda: texto del proyecto seleccionado -->
           <div class="project-modal-text">
             <!-- Aquí se inyectan título y texto de la card -->
           </div>
-          <!-- Columna derecha: galería de imágenes del proyecto -->
           <div class="project-modal-images">
             <!-- Aquí se inyectan las imágenes de la card -->
           </div>
@@ -296,7 +279,6 @@
       </div>
     </div>
 
-    <!-- JS general (interacciones de tarjetas, modal, cursor, etc.) -->
     <script src="assets/js/main.js"></script>
   </body>
 </html>

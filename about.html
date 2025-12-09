@@ -3,9 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About – Portfolio Template</title>
+    <title>Home – Portfolio Template</title>
 
-    <!-- Tipografías de Google -->
     <link
       href="https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap"
       rel="stylesheet"
@@ -15,24 +14,21 @@
       rel="stylesheet"
     />
 
-    <!-- CSS general compartido -->
+    <!-- CSS general -->
     <link rel="stylesheet" href="assets/css/index.css" />
   </head>
 
   <body>
-    <!-- Cursor personalizado -->
     <div class="custom-cursor"></div>
 
-    <!-- NAVIGATION BAR: menú principal de la página About -->
+    <!-- NAVIGATION BAR -->
     <nav class="navbar navbar-about">
-      <!-- Logo / nombre en la barra -->
       <img
         src="assets/img/page_name1.png"
         alt="Logo"
         class="nav-logo-image nav-logo-about"
       />
 
-      <!-- Enlaces de navegación -->
       <ul class="nav-links">
         <li><a href="./index.html">Home</a></li>
         <li><a href="./projects.html">Projects</a></li>
@@ -40,7 +36,7 @@
       </ul>
     </nav>
 
-    <!-- HERO SECTION: cabecera con nombre y tagline -->
+    <!-- HERO SECTION -->
     <header class="hero hero--fixed-parallax">
       <div class="hero-text">
         <h1 class="hero-name">Ana<br />Callejón</h1>
@@ -49,9 +45,9 @@
       </div>
     </header>
 
-    <!-- CONTENIDO PRINCIPAL -->
+    <!-- MAIN -->
     <main class="main-content">
-      <!-- CARRUSEL DOBLE DE IMÁGENES (mismo componente que en home) -->
+      <!-- CARRUSEL DOBLE -->
       <section class="intro-section">
         <div class="carousel-double">
           <!-- FILA SUPERIOR -->
@@ -77,7 +73,7 @@
                 <img src="./assets/img/habitacion6.jpg" alt="image 6" />
               </article>
 
-              <!-- Segunda tanda (idéntica para efecto de bucle) -->
+              <!-- Segunda tanda (idéntica) -->
               <article class="carousel-item">
                 <img src="./assets/img/habitacion1.png" alt="image 1" />
               </article>
@@ -148,7 +144,7 @@
 
       <!-- ========= BLOQUE EXPERIENCE (fondo azul claro) ========= -->
       <section class="experience-area">
-        <!-- SUBTÍTULO / INTRO SUPERIOR -->
+        <!-- SUBTÍTULO / INTRO -->
         <section class="experience-header">
           <p class="experience-subtitle">
             A summary of my previous work, as well as my education and relevant
@@ -156,7 +152,7 @@
           </p>
         </section>
 
-        <!-- ABOUT ME BOX (resumen perfil) -->
+        <!-- ABOUT ME BOX -->
         <section id="exp-about" class="content-box">
           <h3 class="box-title">About Me</h3>
 
@@ -180,12 +176,11 @@
           </div>
         </section>
 
-        <!-- SKILLS BOX (idiomas, soft skills y técnicas) -->
+        <!-- SKILLS BOX -->
         <section id="exp-skills" class="content-box">
           <h3 class="box-title">Skills</h3>
 
           <div class="box-text box-columns">
-            <!-- Columna de idiomas + habilidades interpersonales -->
             <div class="box-column">
               <h4>Languages</h4>
               <ul>
@@ -203,7 +198,6 @@
               </ul>
             </div>
 
-            <!-- Columna de skills técnicos con iconos de nivel -->
             <div class="box-column skills-column-icons">
               <h4>Technical and artistic skills</h4>
 
@@ -275,7 +269,7 @@
           </div>
         </section>
 
-        <!-- EDUCATION BOX (trayectoria académica) -->
+        <!-- EDUCATION BOX -->
         <section id="exp-education" class="content-box">
           <h3 class="box-title">Education</h3>
 
@@ -290,7 +284,7 @@
           </div>
         </section>
 
-        <!-- WORK EXPERIENCE BOX (experiencia laboral y voluntariado) -->
+        <!-- WORK EXPERIENCE BOX -->
         <section id="exp-work" class="content-box">
           <h3 class="box-title">Work Experience</h3>
 
@@ -308,7 +302,7 @@
       </section>
       <!-- ========= FIN BLOQUE EXPERIENCE ========= -->
 
-      <!-- BLOQUE CTA: enlace directo a contacto -->
+      <!-- ========= WANT TO KNOW MORE + CONTACT BUTTON ========= -->
       <section class="about-section about--parallax" id="about">
         <div class="about-content">
           <h2 class="section-title about-title">Want to know more?</h2>
@@ -324,7 +318,6 @@
         </div>
       </section>
 
-      <!-- SECCIÓN DE CONTACTO -->
       <section class="contact-section" id="contact">
         <div class="contact-box">
           <h2 class="section-title contact-title">Contact</h2>
@@ -335,7 +328,6 @@
             Otherwise, leave your info here and I'll get back to you :)
           </p>
 
-          <!-- Formulario sencillo de contacto (solo email) -->
           <form class="contact-form">
             <label for="email" class="contact-label">Your email</label>
 
@@ -354,12 +346,10 @@
       </section>
     </main>
 
-    <!-- FOOTER GENERAL -->
     <footer class="site-footer">
       <p>© 2025 Ana Callejón Alén</p>
     </footer>
 
-    <!-- JS general (interacciones, cursor, carrusel, etc.) -->
     <script src="assets/js/main.js"></script>
   </body>
 </html>

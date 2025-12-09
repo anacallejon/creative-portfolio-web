@@ -8,9 +8,7 @@
   display: inline-block;
 }
 
-/* =========================================================
-     CARRUSEL ESTÁTICO
-     ========================================================= */
+/* ====== CARRUSEL ESTÁTICO ====== */
 
 /* Contenedor de las dos filas */
 .carousel-double {
@@ -60,13 +58,14 @@
   transform: translateX(-20px); /* prueba 100, 180, etc. */
 }
 
-/* =========================================================
-     CURSOR PERSONALIZADO + OCULTAR CURSOR ORIGINAL
-     ========================================================= */
-
+/* ===== OCULTAR CURSOR ORIGINAL ===== */
 html,
 body,
 * {
+  cursor: none !important;
+}
+
+html {
   cursor: none !important;
 }
 
@@ -74,7 +73,7 @@ body,
   display: none !important;
 }
 
-/* Cursor circular personalizado */
+/* ===== CURSOR PERSONALIZADO ===== */
 .custom-cursor {
   position: fixed;
   top: 0;
@@ -97,9 +96,89 @@ body,
   background-color: transparent !important;
 }
 
-/* =========================================================
+/* ==============================
+     CONTACT SECTION (LEFT-ALIGNED)
+     ============================== */
+
+.contact-section {
+  padding: 4rem 0;
+  background-color: #ffffff;
+  text-align: left; /* alineación izquierda */
+  max-width: 700px; /* opcional, para que no quede muy ancho */
+  margin-left: 90px; /* lo colocamos alineado a la izquierda del layout */
+}
+
+.contact-title {
+  text-align: left;
+}
+
+.contact-text {
+  font-family: "Unbounded", sans-serif;
+  font-weight: 300;
+  color: #222;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 420px; /* alineado a la izquierda */
+}
+
+.contact-label {
+  font-family: "Unbounded", sans-serif;
+  font-weight: 300;
+  color: #222;
+  margin-top: 0.8rem;
+  margin-bottom: 0rem;
+}
+
+.contact-input {
+  padding: 0.8rem 1rem;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: "Unbounded", sans-serif;
+  font-weight: 300;
+  color: #222;
+  transition: 0.2s ease;
+  margin-top: none;
+}
+
+.contact-input::placeholder {
+  color: #444;
+  font-family: "Unbounded", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+
+.contact-input:focus {
+  outline: none;
+  border-color: #cc1753;
+  box-shadow: 0 0 0 3px rgba(204, 23, 83, 0.2);
+}
+
+.contact-btn {
+  padding: 0.9rem 1.5rem;
+  background-color: #cc1753;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+  width: fit-content; /* botón alineado a la izquierda */
+  font-family: "Unbounded", sans-serif;
+}
+
+.contact-btn:hover {
+  background-color: #a41342;
+}
+
+/* ==============================
      CONTACT SECTION + GLASS BOX
-     ========================================================= */
+     ============================== */
 
 .contact-section {
   padding: 4rem 0;
@@ -108,7 +187,7 @@ body,
 
 /* Caja glass a ancho del viewport (menos márgenes laterales) */
 .contact-box {
-  width: calc(100vw - 160px); /* viewport menos 80px a cada lado */
+  width: calc(100vw - 160px); /* viewport menos 40px a cada lado */
   margin: 0 auto; /* centrada respecto al viewport */
   padding: 3rem 3rem;
   border-radius: 24px;
@@ -189,16 +268,15 @@ body,
   transition: 0.2s ease;
   width: fit-content;
   margin-top: 0.4rem;
-  font-family: "Unbounded", sans-serif;
 }
 
 .contact-btn:hover {
   background-color: #a41342;
 }
 
-/* =========================================================
-     TWO-COLUMN OFFSET CARDS – PROJECTS
-     ========================================================= */
+/* ==============================
+     TWO-COLUMN OFFSET CARDS – UPDATED
+     ============================== */
 
 .cards-section {
   padding: 6rem 0;
@@ -209,15 +287,15 @@ body,
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
-  width: calc(100vw - 160px);
+  width: calc(100vw - 160px); /* tu ajuste */
   margin: 0 auto;
 }
 
-/* CARDS base */
+/* CARDS */
 .card {
   position: relative;
   padding: 0;
-  height: 400px; /* más alta como pedías */
+  height: 400px; /* <-- más alta como pedías */
   border-radius: 20px;
   overflow: hidden;
   margin-bottom: 50px;
@@ -229,7 +307,6 @@ body,
   justify-content: flex-end; /* coloca el texto abajo */
 }
 
-/* Versión glass para la página de proyectos */
 .projects-page .card {
   position: relative;
   border-radius: 20px;
@@ -242,7 +319,7 @@ body,
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
 
   overflow: hidden;
-  padding-bottom: 0; /* ya sin padding extra abajo */
+  padding-bottom: 20px;
 }
 
 .card-img {
@@ -258,12 +335,12 @@ body,
   content: "";
   position: absolute;
   left: 0;
-  bottom: 0; /* ahora en la parte inferior */
+  bottom: 0; /* 👈 ahora en la parte inferior */
   width: 100%;
   height: 80px; /* zona de degradado (ajústalo: 40, 60, 100...) */
   background: linear-gradient(
     to top,
-    rgba(255, 255, 255, 1),
+    /* 👈 blanco abajo → transparente arriba */ rgba(255, 255, 255, 1),
     rgba(255, 255, 255, 0)
   );
   z-index: 2; /* detrás del texto, encima de la imagen */
@@ -305,20 +382,6 @@ body,
   font-size: 0.8rem;
 }
 
-/* Ajustes de espaciado específicos en Projects */
-.projects-page .card-content {
-  padding: 0.8rem 1.2rem 1rem; /* top - sides - bottom */
-}
-
-.projects-page .card-title {
-  margin-bottom: 0.05rem; /* casi sin espacio debajo del título */
-}
-
-.projects-page .card-text {
-  margin-top: 0;
-  line-height: 1.3; /* texto más compacto */
-}
-
 /* RESPONSIVE */
 @media (max-width: 900px) {
   .cards-grid {
@@ -337,13 +400,36 @@ body,
   }
 }
 
-/* =========================================================
+/* ============================================
+     AJUSTE DE ESPACIADO EN TARJETAS
+     ============================================ */
+
+/* Quitamos padding interno para bajar el contenido */
+.projects-page .card {
+  padding-bottom: 0;
+}
+
+/* Contenido más pegado a la parte inferior */
+.projects-page .card-content {
+  padding: 0.8rem 1.2rem 1rem; /* top - sides - bottom */
+}
+
+.projects-page .card-title {
+  margin-bottom: 0.05rem; /* casi sin espacio debajo del título */
+}
+
+.projects-page .card-text {
+  margin-top: 0; /* elimina espacio extra arriba */
+  line-height: 1.3; /* opcional: texto más compacto */
+}
+
+/* ============================================
      MODAL DE PROYECTO — RELACIÓN 805:400
-     ========================================================= */
+     ============================================ */
 
 /* Fondo oscuro detrás (overlay) */
 .project-modal-backdrop {
-  position: fixed;
+  position: fixed; /* 👈 aquí estaba el error antes */
   inset: 0;
   background: rgba(0, 0, 0, 0.45);
   display: flex;
@@ -363,10 +449,11 @@ body,
 /* Ventana modal (relleno sólido + glass) */
 .project-modal {
   aspect-ratio: 805 / 400; /* proporción fija */
-  width: min(95vw, 1600px);
+  width: min(95vw, 1600px); /* lo más grande posible */
   height: auto;
-  max-height: calc(100vh - 180px);
-  margin-bottom: 60px;
+  max-height: calc(100vh - 180px); /* deja margen arriba/abajo */
+
+  margin-bottom: 60px; /* margen extra desde abajo */
 
   background: rgba(178, 193, 237, 0.95); /* azul sólido */
   backdrop-filter: blur(18px);
@@ -388,7 +475,7 @@ body,
   opacity: 1;
 }
 
-/* Interior: dos columnas (texto izq, imágenes dcha) */
+/* --- Interior: dos columnas (texto izq, imágenes dcha) --- */
 .project-modal-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -452,7 +539,7 @@ body.projects-page.modal-open .navbar {
   -webkit-backdrop-filter: blur(8px);
 }
 
-/* Responsive modal */
+/* Responsive */
 @media (max-width: 900px) {
   .project-modal {
     width: 100vw;
@@ -466,10 +553,6 @@ body.projects-page.modal-open .navbar {
     grid-template-rows: auto auto;
   }
 }
-
-/* =========================================================
-     BOTÓN ABOUT / EXPERIENCE
-     ========================================================= */
 
 .about-btn {
   padding: 0.9rem 1.5rem;
@@ -508,9 +591,9 @@ body.projects-page.modal-open .navbar {
   opacity: 1; /* más visible al hover */
 }
 
-/* =========================================================
-     EXPERIENCE HEADER (H1 + GRID)
-     ========================================================= */
+/* ===========================
+   EXPERIENCE HEADER (H1+GRID)
+   =========================== */
 
 .experience-header {
   padding: 5rem 0 3rem;
@@ -550,13 +633,13 @@ body.projects-page.modal-open .navbar {
   background-color: #e3e3e3;
 }
 
-/* =========================================================
-     CONTENT BOXES (ABOUT / SKILLS / EDUCATION / WORK)
-     ========================================================= */
+/* ===========================
+     CONTENT BOXES (ABOUT/SKILLS/...)
+     =========================== */
 
 .content-box {
   position: relative;
-  width: min(1200px, 94%); /* también la hacemos más ancha aquí */
+  width: min(1200px, 94%); /* 👉 también la hacemos más ancha aquí */
   margin: 70px auto;
   padding: 32px 40px 28px; /* antes 40px 40px 32px */
   border-radius: 12px;
@@ -617,7 +700,7 @@ body.projects-page.modal-open .navbar {
   color: #333333;
 }
 
-/* responsive cajas */
+/* responsive */
 @media (max-width: 900px) {
   .experience-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -633,20 +716,18 @@ body.projects-page.modal-open .navbar {
   }
 }
 
-/* =========================================================
-     ARREGLO ALINEACIÓN SKILLS CON ICONOS
-     ========================================================= */
+/* ==== ARREGLO ALINEACIÓN SKILLS CON ICONOS ==== */
 
 /* Columna de Technical and artistic skills */
 .skills-column-icons {
-  padding-left: 0;
+  padding-left: 0; /* por si heredaba algo */
   margin-left: 0;
 }
 
 /* Quitamos la sangría típica del ul SOLO aquí */
 .skills-column-icons .skills-icon-list {
   margin-left: 0; /* anula el 1.2rem del content-box ul */
-  padding-left: 0;
+  padding-left: 0; /* por si acaso */
   list-style: none; /* sin viñetas porque usas iconos */
 }
 

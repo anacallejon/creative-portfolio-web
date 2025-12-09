@@ -1,17 +1,13 @@
-/* =========================================
-   CONTENEDOR GENERAL
-   ========================================= */
 .container {
   width: var(--spacing-container);
   max-width: var(--spacing-max-width);
   margin: 0 auto;
 }
 
-/* =========================================
-     NAVBAR — BASE Y VARIACIONES
-     ========================================= */
+/* ----------------------------------------
+   NAVBAR — BASE PARA TODAS LAS PÁGINAS
+----------------------------------------- */
 
-/* Base para todas las páginas */
 .navbar {
   position: fixed;
   top: 0;
@@ -25,7 +21,7 @@
   padding: 0 40px;
 }
 
-/* Enlaces dentro del navbar */
+/* ENLACES */
 .nav-links {
   display: flex;
   gap: 1.8rem;
@@ -44,13 +40,16 @@
   opacity: 0.7;
 }
 
-/* Logo genérico */
+/* LOGO */
 .nav-logo-image {
   height: 1.5rem;
   object-fit: contain;
 }
 
-/* Navbar específica para la home (index) */
+/* ----------------------------------------
+   NAVBAR — HOME PAGE (index.html)
+----------------------------------------- */
+
 .navbar-home {
   justify-content: flex-end;
 }
@@ -59,7 +58,10 @@
   justify-content: flex-end;
 }
 
-/* Navbar específica para la página de proyectos */
+/* ----------------------------------------
+   NAVBAR — PROJECTS PAGE (projects.html)
+----------------------------------------- */
+
 .navbar-projects {
   justify-content: space-between;
 }
@@ -69,7 +71,12 @@
   margin-left: auto;
 }
 
-/* Navbar específica para la página About */
+/* ----------------------------------------
+   NAVBAR — ABOUT PAGE (about.html)
+   Home / Projects / Contact
+   Logo solo al hacer scroll
+----------------------------------------- */
+
 .navbar-about {
   position: fixed;
   top: 0;
@@ -81,24 +88,35 @@
   justify-content: space-between; /* logo izq + links dcha */
   z-index: 9999;
   background-color: transparent; /* transparente al inicio */
-  padding: 0 40px;
+  padding: 0 40px; /* MISMO margen lateral */
   box-sizing: border-box;
   transition: background-color 0.35s ease;
 }
 
-/* Logo de About: oculto al inicio, visible al hacer scroll */
+/* Logo de about: oculto al inicio */
 .navbar-about .nav-logo-about {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
 }
 
-/* Enlaces a la derecha en About */
+/* Enlaces: ya tienes estilos globales .nav-links y .nav-links a {} */
+/* Solo nos aseguramos de que queden a la derecha */
 .navbar-about .nav-links {
   margin-left: auto;
 }
 
-/* Estados internos controlados por JS (scroll) */
+/* Cuando se hace scroll (JS añade la clase .scrolled) */
+.navbar-about.scrolled {
+  background-color: #8b93bc;
+}
+
+.navbar-about.scrolled .nav-logo-about {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Capas internas: ocupan todo el ancho menos el padding del navbar */
 .navbar-about .nav-inner {
   width: 100%;
   display: flex;
@@ -120,14 +138,9 @@
   justify-content: space-between;
 }
 
-/* Cuando se hace scroll (JS añade .scrolled) */
+/* Cuando el scroll se activa (clase que pones con JS) */
 .navbar-about.scrolled {
   background-color: #8b93bc;
-}
-
-.navbar-about.scrolled .nav-logo-about {
-  opacity: 1;
-  pointer-events: auto;
 }
 
 .navbar-about.scrolled .nav-about-initial {
@@ -139,10 +152,6 @@
   opacity: 1;
   pointer-events: auto;
 }
-
-/* =========================================
-     HERO GENERAL (HOME / ABOUT)
-     ========================================= */
 
 .hero {
   position: relative;
@@ -171,7 +180,7 @@
   position: absolute;
   inset: 0;
   background: var(--color-hero-overlay);
-  z-index: -1; /* por debajo del hero-text */
+  z-index: -1; /* MUY IMPORTANTE: por debajo del hero-text */
 }
 
 /* Contenedor del texto sobre la imagen */
@@ -180,12 +189,11 @@
   left: 90px;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 2;
+  z-index: 2; /* por encima del hero, por debajo del main */
   text-align: left;
   pointer-events: none;
 }
 
-/* Tipografías y tamaños del hero */
 .hero-name {
   font-family: "Unbounded", sans-serif;
   font-weight: 700;
@@ -222,23 +230,14 @@
   opacity: 0.9;
 }
 
-/* En móvil anulamos el parallax fijo */
-@media (max-width: 768px) {
-  .hero--fixed-parallax {
-    background-attachment: scroll;
-  }
-}
-
-/* =========================================
-     TÍTULOS DE SECCIÓN Y UTILIDADES
-     ========================================= */
+/* ===== TITLES (SECTION TITLES) ===== */
 
 .section-title {
   font-family: "Unbounded", sans-serif;
-  font-weight: 600;
-  color: #cc1753;
-  text-align: left;
-  font-size: 2rem;
+  font-weight: 600; /* semibold */
+  color: #cc1753; /* tu rosa */
+  text-align: left; /* opcional: si quieres que todos sean left */
+  font-size: 2rem; /* ajusta si quieres más grande o más pequeño */
   margin-bottom: 1.5rem;
   margin-top: 1rem;
 }
@@ -247,17 +246,21 @@
   text-align: center;
 }
 
+@media (max-width: 768px) {
+  .hero--fixed-parallax {
+    background-attachment: scroll;
+  }
+}
+
 .color {
   color: #cc1753;
   text-decoration: underline;
 }
 
-/* =========================================
-     FEATURED PROJECTS / CARRUSEL DOBLE (HOME)
-     ========================================= */
+/* ----- FEATURED PROJECTS / CARRUSEL DOBLE ----- */
 
 .intro-section {
-  padding-top: 3.5rem; /* versión efectiva */
+  padding-top: 2rem;
   padding-bottom: var(--spacing-section);
   background-color: #ffffff;
 }
@@ -265,7 +268,7 @@
 .carousel-double {
   display: flex;
   flex-direction: column;
-  gap: 1.8rem; /* menos espacio entre filas */
+  gap: 1.8rem; /* antes 2rem */
   overflow: hidden;
 }
 
@@ -273,21 +276,28 @@
   overflow: hidden;
 }
 
-/* Contenido principal por encima del hero fijo */
 .main-content {
   position: relative;
-  z-index: 3;
+  z-index: 3; /* por encima del texto fijo */
   background-color: #ffffff;
 }
 
-/* =========================================
-     ABOUT SECTION (PARALLAX)
-     ========================================= */
+/* Sección featured */
+.intro-section {
+  padding-top: 3.5rem; /* o incluso 1rem */
+  padding-bottom: var(--spacing-section);
+  background-color: #ffffff;
+}
+
+/* ==============================
+   ABOUT SECTION (PARALLAX)
+   ============================== */
 
 .about-section {
   position: relative;
   width: 100%;
   min-height: 35vh;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -301,11 +311,11 @@
   color: #f7f5f0;
 }
 
-/* Contenedor general de la sección About */
+/* CONTENEDOR GENERAL: MAX WIDTH MUCHO MAYOR */
 .about-content {
   width: 100%;
-  max-width: 1400px; /* más ancho para el texto largo */
-  padding: 3rem 3rem;
+  max-width: 1400px; /* ← AGRANDADO */
+  padding: 3rem 3rem; /* ← más espacio lateral */
   margin: 0 auto;
   box-sizing: border-box;
 }
@@ -316,10 +326,10 @@
   margin-bottom: 0.5rem;
 }
 
-/* Texto principal */
+/* TEXTO PRINCIPAL: ANCHURA TOTAL DEL CONTENEDOR */
 .about-text {
   margin: 1.2rem auto 0 auto;
-  max-width: 95%;
+  max-width: 95%; /* ← ocupa casi todo el contenedor */
   font-family: "Unbounded", sans-serif;
   font-weight: 300;
   font-size: 1rem;
@@ -328,7 +338,7 @@
   margin-bottom: 2rem;
 }
 
-/* Botón dentro de About (estilo base, detalles en components.css) */
+/* BOTÓN */
 .about-btn {
   margin-top: 0.7rem;
   display: inline-flex;
@@ -336,7 +346,7 @@
   justify-content: center;
 }
 
-/* Ajustes móviles en About */
+/* MÓVIL */
 @media (max-width: 768px) {
   .about-section {
     background-attachment: scroll;
@@ -352,39 +362,39 @@
   }
 }
 
-/* =========================================
-     FOOTER MINIMAL
-     ========================================= */
+/* ==============================
+   FOOTER MINIMAL
+   ============================== */
 
 .site-footer {
   padding: 4rem 0;
   text-align: center;
-  background-color: #ffffff;
+  background-color: #ffffff; /* mismo blanco del body */
 }
 
 .site-footer p {
   font-family: "Unbounded", sans-serif;
-  font-weight: 300;
-  color: #222;
-  font-size: 0.8rem;
-  opacity: 0.85;
+  font-weight: 300; /* LIGHT */
+  color: #222; /* negro suave */
+  font-size: 0.8rem; /* más pequeño que body */
+  opacity: 0.85; /* detalle extra para suavizarlo */
   margin: 0;
 }
 
-/* =========================================
-     HERO / PARALLAX DE PROJECTS PAGE
-     ========================================= */
+/* ============================================
+   TEXTO SOBRE EL PARALLAX — PROJECTS PAGE
+   ============================================ */
 
-/* Texto centrado sobre el bloque morado */
 .projects-hero-text {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -45%);
   text-align: center;
+
   width: min(90%, 700px);
-  color: #f4f4f4;
-  z-index: 5;
+  color: #f4f4f4; /* off-white */
+  z-index: 5; /* por encima del parallax pero debajo del navbar */
   pointer-events: none; /* no tapa la navegación */
 }
 
@@ -393,7 +403,7 @@
   font-weight: 600;
   font-size: 4rem;
   line-height: 1;
-  color: #f4f4f4;
+  color: #f4f4f4; /* off-white */
   margin-bottom: 1rem;
 }
 
@@ -409,14 +419,14 @@
   z-index: 50;
 }
 
-/* Empuja el contenido de Projects por debajo de la navbar */
+/* Empuja TODO el contenido de projects por debajo de la navbar */
 body.projects-page {
   padding-top: 80px; /* misma altura que .navbar */
 }
 
-/* Bloque superior de color en Projects */
+/* Asegúrate de que el hero tiene su altura y no márgenes raros */
 .top-parallax {
-  height: 40vh;
+  height: 40vh; /* si quieres que se vea más grande el bloque morado */
   margin-top: 0;
   position: relative;
   background-color: #8b93bc;

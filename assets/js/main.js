@@ -164,4 +164,9 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+  // Forzar que la página siempre cargue arriba del todo
+  window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+  };
 });

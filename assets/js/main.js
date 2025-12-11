@@ -174,30 +174,33 @@ document.addEventListener("DOMContentLoaded", () => {
   const navLinks = document.querySelector(".nav-links");
   const overlay = document.querySelector(".nav-overlay");
 
-  if (navToggle && navLinks && overlay) {
-    navToggle.addEventListener("click", () => {
-      const isOpen = navLinks.classList.toggle("nav-open");
-      navToggle.classList.toggle("nav-open", isOpen);
-      document.body.classList.toggle("nav-open", isOpen);
-      overlay.classList.toggle("nav-open", isOpen);
-    });
-
-    // Cerrar al hacer click en un enlace
-    navLinks.addEventListener("click", (event) => {
-      if (event.target.tagName.toLowerCase() === "a") {
-        navLinks.classList.remove("nav-open");
-        navToggle.classList.remove("nav-open");
-        document.body.classList.remove("nav-open");
-        overlay.classList.remove("nav-open");
-      }
-    });
-
-    // Cerrar al hacer click en el overlay
-    overlay.addEventListener("click", () => {
-      navLinks.classList.remove("nav-open");
-      navToggle.classList.remove("nav-open");
-      document.body.classList.remove("nav-open");
-      overlay.classList.remove("nav-open");
-    });
+  if (!navToggle || !navLinks || !overlay) {
+    console.warn("Falta nav-toggle, nav-links o nav-overlay en el HTML.");
+    return;
   }
+
+  const closeMenu = () => {
+    navLinks.classList.remove("nav-open");
+    navToggle.classList.remove("nav-open");
+    overlay.classList.remove("nav-open");
+    document.body.classList.remove("nav-open");
+  };
+
+  // Abrir/cerrar al clicar la hamburguesa
+  navToggle.addEventListener("click", () => {
+    const isOpen = navLinks.classList.toggle("nav-open");
+    navToggle.classList.toggle("nav-open", isOpen);
+    overlay.classList.toggle("nav-open", isOpen);
+    document.body.classList.toggle("nav-open", isOpen);
+  });
+
+  // Cerrar al clicar un enlace
+  navLinks.addEventListener("click", (event) => {
+    if (event.target.tagName.toLowerCase() === "a") {
+      closeMenu();
+    }
+  });
+
+  // Cerrar al clicar el fondo oscuro
+  overlay.addEventListener("click", closeMenu);
 });

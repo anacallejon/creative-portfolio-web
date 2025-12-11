@@ -27,6 +27,8 @@
   display: flex;
   flex-wrap: nowrap;
   gap: 1.5rem;
+  width: max-content; /* CLAVE: mide exactamente el ancho real */
+  will-change: transform; /* optimización */
 }
 
 /* Cada tarjeta del carrusel: marco fijo */
@@ -71,6 +73,104 @@ html {
 
 ::-webkit-scrollbar {
   display: none !important;
+}
+
+@keyframes scroll-loop {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ==============================
+   CARRUSEL ANIMADO – TABLET + MÓVIL
+   ============================== */
+
+@media (max-width: 1024px) {
+  .carousel-row--top .carousel-track,
+  .carousel-row--bottom .carousel-track {
+    transform: translateX(0);
+  }
+
+  /* más rápido: 14s */
+  .carousel-row--top .carousel-track {
+    animation: scroll-left 14s linear infinite;
+  }
+
+  .carousel-row--bottom .carousel-track {
+    animation: scroll-right 14s linear infinite;
+  }
+
+  .carousel-item {
+    flex: 0 0 300px;
+    height: 190px;
+  }
+}
+
+@media (max-width: 1024px) {
+  /* empezamos desde 0 para que el loop sea limpio */
+  .carousel-row--top .carousel-track,
+  .carousel-row--bottom .carousel-track {
+    transform: translateX(0);
+  }
+
+  /* Fila superior: se mueve hacia la izquierda */
+  .carousel-row--top .carousel-track {
+    animation: scroll-left 35s linear infinite;
+  }
+
+  /* Fila inferior: hacia la derecha para contraste */
+  .carousel-row--bottom .carousel-track {
+    animation: scroll-right 35s linear infinite;
+  }
+
+  /* Opcional: tarjetas algo más pequeñas en pantallas ≤1024 */
+  .carousel-item {
+    flex: 0 0 300px;
+    height: 190px;
+  }
+}
+
+/* Móviles muy pequeños: todavía más compactos */
+@media (max-width: 768px) {
+  .carousel-item {
+    flex: 0 0 260px;
+    height: 170px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .carousel-row--top .carousel-track,
+  .carousel-row--bottom .carousel-track {
+    transform: translateX(0);
+    animation: scroll-loop 30s linear infinite; /* VELOCIDAD ALTA */
+  }
+
+  /* fila inferior en sentido contrario */
+  .carousel-row--bottom .carousel-track {
+    animation-direction: reverse;
+  }
+}
+
+/* KEYFRAMES (solo los usan las media queries anteriores) */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 /* ===== CURSOR PERSONALIZADO ===== */

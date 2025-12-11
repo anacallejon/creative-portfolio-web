@@ -488,7 +488,7 @@ body.projects-page {
     min-height: auto;
     padding: 120px 20px 48px; /* menos alto y menos padding */
     align-items: flex-start;
-    justify-content: center;
+    justify-content: left;
   }
 
   .hero-text {
@@ -496,23 +496,23 @@ body.projects-page {
     left: auto;
     top: auto;
     transform: none;
-    text-align: center;
+    text-align: left;
     pointer-events: auto;
   }
 
   .hero-name {
-    font-size: 2.2rem; /* bastante pequeño ya */
+    font-size: 3.2rem; /* bastante pequeño ya */
     line-height: 1.05;
   }
 
   .hero-tagline {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     margin-top: 0.5rem;
   }
 
   .hero-job {
-    font-size: 1rem;
+    font-size: 1.5rem;
     margin-top: 0.25rem;
-    line-height: 1.1;
+    line-height: 0.4;
   }
 }

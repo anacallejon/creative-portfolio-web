@@ -21,7 +21,7 @@
   padding: 0 40px;
 }
 
-/* ENLACES */
+/* ENLACES (estado de escritorio) */
 .nav-links {
   display: flex;
   gap: 1.8rem;
@@ -73,8 +73,6 @@
 
 /* ----------------------------------------
    NAVBAR — ABOUT PAGE (about.html)
-   Home / Projects / Contact
-   Logo solo al hacer scroll
 ----------------------------------------- */
 
 .navbar-about {
@@ -85,28 +83,24 @@
   height: 80px;
   display: flex;
   align-items: center;
-  justify-content: space-between; /* logo izq + links dcha */
+  justify-content: space-between;
   z-index: 9999;
-  background-color: transparent; /* transparente al inicio */
-  padding: 0 40px; /* MISMO margen lateral */
+  background-color: transparent;
+  padding: 0 40px;
   box-sizing: border-box;
   transition: background-color 0.35s ease;
 }
 
-/* Logo de about: oculto al inicio */
 .navbar-about .nav-logo-about {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
 }
 
-/* Enlaces: ya tienes estilos globales .nav-links y .nav-links a {} */
-/* Solo nos aseguramos de que queden a la derecha */
 .navbar-about .nav-links {
   margin-left: auto;
 }
 
-/* Cuando se hace scroll (JS añade la clase .scrolled) */
 .navbar-about.scrolled {
   background-color: #8b93bc;
 }
@@ -116,41 +110,132 @@
   pointer-events: auto;
 }
 
-/* Capas internas: ocupan todo el ancho menos el padding del navbar */
-.navbar-about .nav-inner {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.35s ease;
+/* ----------------------------------------
+   BOTÓN HAMBURGUESA (base)
+----------------------------------------- */
+
+.nav-toggle {
+  display: none; /* se activa en responsive */
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-left: auto;
+  z-index: 10001;
 }
 
-/* Estado inicial → solo links a la derecha, sin logo */
-.navbar-about .nav-about-initial {
-  justify-content: flex-end;
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: #cc1753;
+  border-radius: 999px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.nav-toggle span + span {
+  margin-top: 6px;
+}
+
+/* Estado abierto: X */
+.nav-toggle.nav-open span:first-child {
+  transform: translateY(4px) rotate(45deg);
+}
+
+.nav-toggle.nav-open span:last-child {
+  transform: translateY(-4px) rotate(-45deg);
+}
+
+/* ----------------------------------------
+   OVERLAY DEL MENÚ
+----------------------------------------- */
+
+.nav-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 9000;
+}
+
+.nav-overlay.nav-open {
   opacity: 1;
   pointer-events: auto;
 }
 
-/* Estado avanzado → logo izq + links dcha */
-.navbar-about .nav-about-scrolled {
-  justify-content: space-between;
+/* ----------------------------------------
+   NAVBAR RESPONSIVE – PANEL DERECHA
+----------------------------------------- */
+
+/* MÓVIL + TABLET (≤ 1024px): hamburguesa + menú lateral */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 0 20px;
+    justify-content: space-between;
+  }
+
+  /* mostrar botón hamburguesa */
+  .nav-toggle {
+    display: block;
+  }
+
+  /* panel lateral: sustituye al menú horizontal */
+  .nav-links {
+    position: fixed;
+    top: 80px;
+    right: 0;
+    height: calc(100vh - 80px);
+    width: 70vw;
+    max-width: 320px;
+
+    background-color: #8b93bc;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start; /* enlaces arriba */
+    padding: 1.8rem 1.6rem;
+    gap: 1.2rem;
+
+    transform: translateX(100%); /* oculto fuera de pantalla */
+    transition: transform 0.3s ease-out;
+
+    z-index: 10000;
+  }
+
+  /* estado abierto del panel (JS añade .nav-open) */
+  .nav-links.nav-open {
+    transform: translateX(0);
+  }
+
+  .nav-links a {
+    font-size: 1rem;
+  }
+
+  body.nav-open {
+    overflow: hidden;
+  }
 }
 
-/* Cuando el scroll se activa (clase que pones con JS) */
-.navbar-about.scrolled {
-  background-color: #8b93bc;
-}
+/* ESCRITORIO (≥ 1025px): navbar clásica */
+@media (min-width: 1025px) {
+  .nav-toggle {
+    display: none;
+  }
 
-.navbar-about.scrolled .nav-about-initial {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.navbar-about.scrolled .nav-about-scrolled {
-  opacity: 1;
-  pointer-events: auto;
+  .nav-links {
+    position: static;
+    height: auto;
+    width: auto;
+    background: transparent;
+    transform: none;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.8rem;
+    padding: 0;
+  }
 }
 
 .hero {

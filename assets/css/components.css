@@ -846,3 +846,56 @@ body.projects-page.modal-open .navbar {
   object-fit: contain;
   display: block;
 }
+
+/* ==============================
+   CONTACT RESPONSIVE – TABLET & MOBILE
+   ============================== */
+
+/* TABLET (≤ 1024px) */
+@media (max-width: 1024px) {
+  .contact-section {
+    margin-left: 0;
+    padding: 4rem 2rem;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .contact-box {
+    width: 100%;
+    padding: 3rem 2rem;
+    border-radius: 20px;
+  }
+}
+
+/* MÓVIL (≤ 768px) */
+@media (max-width: 768px) {
+  .contact-section {
+    margin-left: 0;
+    padding: 3rem 1.4rem;
+    max-width: 100%;
+  }
+
+  .contact-box {
+    width: 100%;
+    padding: 2rem 1.4rem;
+    border-radius: 18px;
+  }
+
+  .contact-title,
+  .contact-text {
+    text-align: left;
+    font-family: "Unbounded", sans-serif;
+  }
+
+  .contact-input {
+    font-size: 0.95rem;
+    font-family: "Unbounded", sans-serif;
+    padding: 0.75rem 1rem;
+  }
+
+  .contact-btn {
+    font-size: 0.95rem;
+    padding: 0.8rem 1.2rem;
+    margin-top: 1rem;
+  }
+}

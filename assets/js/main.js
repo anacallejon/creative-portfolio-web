@@ -169,4 +169,35 @@ document.addEventListener("DOMContentLoaded", () => {
   window.onbeforeunload = function () {
     window.scrollTo(0, 0);
   };
+
+  const navToggle = document.querySelector(".nav-toggle");
+  const navLinks = document.querySelector(".nav-links");
+  const overlay = document.querySelector(".nav-overlay");
+
+  if (navToggle && navLinks && overlay) {
+    navToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("nav-open");
+      navToggle.classList.toggle("nav-open", isOpen);
+      document.body.classList.toggle("nav-open", isOpen);
+      overlay.classList.toggle("nav-open", isOpen);
+    });
+
+    // Cerrar al hacer click en un enlace
+    navLinks.addEventListener("click", (event) => {
+      if (event.target.tagName.toLowerCase() === "a") {
+        navLinks.classList.remove("nav-open");
+        navToggle.classList.remove("nav-open");
+        document.body.classList.remove("nav-open");
+        overlay.classList.remove("nav-open");
+      }
+    });
+
+    // Cerrar al hacer click en el overlay
+    overlay.addEventListener("click", () => {
+      navLinks.classList.remove("nav-open");
+      navToggle.classList.remove("nav-open");
+      document.body.classList.remove("nav-open");
+      overlay.classList.remove("nav-open");
+    });
+  }
 });

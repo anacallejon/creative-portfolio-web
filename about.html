@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home – Portfolio Template</title>
+    <title>About – Ana Callejón</title>
 
     <link
       href="https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap"
@@ -29,12 +29,19 @@
         class="nav-logo-image nav-logo-about"
       />
 
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+      </button>
+
       <ul class="nav-links">
         <li><a href="./index.html">Home</a></li>
         <li><a href="./projects.html">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
+
+    <div class="nav-overlay"></div>
 
     <!-- HERO SECTION -->
     <header class="hero hero--fixed-parallax">
@@ -320,28 +327,75 @@
 
       <section class="contact-section" id="contact">
         <div class="contact-box">
-          <h2 class="section-title contact-title">Contact</h2>
+          <h2 class="contact-title">Let's Connect!</h2>
 
-          <p class="contact-text">
-            If you want to collaborate, ask something, or just say hi, feel free
-            to reach out at <span class="color">anacalen03@gmail.com</span>.
-            Otherwise, leave your info here and I'll get back to you :)
-          </p>
+          <div class="contact-content">
+            <!-- COLUMNA IZQUIERDA: REDES SOCIALES -->
+            <div class="contact-socials">
+              <!-- Instagram -->
+              <a
+                href="https://instagram.com/ana.callejon"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-item"
+              >
+                <div class="social-icon">
+                  <!-- Aquí puedes poner tu icono de Instagram -->
+                  <!-- <img src="assets/img/instagram-icon.png" alt="Instagram"> -->
+                </div>
+                <div class="social-info">
+                  <div class="social-name">Instagram</div>
+                  <div class="social-handle">@ana.callejon</div>
+                </div>
+              </a>
 
-          <form class="contact-form">
-            <label for="email" class="contact-label">Your email</label>
+              <!-- LinkedIn -->
+              <a
+                href="https://linkedin.com/in/ana-callejon"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-item"
+              >
+                <div class="social-icon">
+                  <!-- Aquí puedes poner tu icono de LinkedIn -->
+                  <!-- <img src="assets/img/linkedin-icon.png" alt="LinkedIn"> -->
+                </div>
+                <div class="social-info">
+                  <div class="social-name">LinkedIn</div>
+                  <div class="social-handle">@ana.callejon</div>
+                </div>
+              </a>
+            </div>
 
-            <input
-              type="email"
-              id="email"
-              name="email"
-              class="contact-input"
-              placeholder="name@example.com"
-              required
-            />
+            <!-- COLUMNA DERECHA: FORMULARIO -->
+            <div class="contact-form-wrapper">
+              <p class="contact-text">
+                If you want to collaborate, ask something, or just say hi, feel
+                free to reach out at
+                <span class="color">ana.callejonalen@gmail.com</span>.
+                Otherwise, leave your info here and I'll get back to you :)
+              </p>
 
-            <button type="submit" class="contact-btn">Send</button>
-          </form>
+              <form
+                class="contact-form"
+                action="https://formspree.io/f/mrebapro"
+                method="POST"
+              >
+                <label for="email" class="contact-label">Your email</label>
+
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="contact-input"
+                  placeholder="name@example.com"
+                  required
+                />
+
+                <button type="submit" class="contact-btn">Send</button>
+              </form>
+            </div>
+          </div>
         </div>
       </section>
     </main>

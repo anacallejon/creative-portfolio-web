@@ -52,6 +52,17 @@
   object-fit: contain;
 }
 
+/* ENLACE DEL LOGO */
+.nav-logo-link {
+  display: inline-block;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.nav-logo-link:hover {
+  opacity: 0.8;
+}
+
 /* ----------------------------------------
    NAVBAR — HOME PAGE (index.html)
 ----------------------------------------- */
@@ -298,7 +309,7 @@
   z-index: -1; /* MUY IMPORTANTE: por debajo del hero-text */
 }
 
-/* Contenedor del texto sobre la imagen */
+/* Contenedor del texto sobre la imagen con animación de aparición */
 .hero-text {
   position: fixed;
   left: 90px;
@@ -307,6 +318,18 @@
   z-index: 2; /* por encima del hero, por debajo del main */
   text-align: left;
   pointer-events: none;
+
+  /* Estado inicial: invisible */
+  opacity: 0;
+  transform: translateY(calc(-50% + 30px));
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Estado visible después de la animación */
+.hero-text.hero-visible {
+  opacity: 1;
+  transform: translateY(-50%);
 }
 
 .hero-name {
@@ -511,6 +534,18 @@
   color: #f4f4f4;
   z-index: 5;
   pointer-events: none;
+
+  /* Estado inicial: invisible */
+  opacity: 0;
+  transform: translate(-50%, calc(-45% + 30px));
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Estado visible después de la animación */
+.projects-hero-text.hero-visible {
+  opacity: 1;
+  transform: translate(-50%, -45%);
 }
 
 .projects-hero-title {
@@ -559,41 +594,10 @@ body.projects-page {
 }
 
 /* ==============================
-   HERO RESPONSIVE
+   HERO RESPONSIVE - SOLO MÓVIL
    ============================== */
 
-/* TABLET (≤ 1024px): misma composición, pero más pequeño */
-@media (max-width: 1024px) {
-  .hero {
-    min-height: 75vh;
-  }
-
-  .hero-text {
-    position: absolute;
-    left: 48px;
-    top: 50%;
-    transform: translateY(-50%);
-    text-align: left;
-  }
-
-  .hero-name {
-    font-size: 4.2rem;
-    line-height: 0.95;
-  }
-
-  .hero-tagline {
-    font-size: 1.4rem;
-    margin-top: 0.8rem;
-  }
-
-  .hero-job {
-    font-size: 1.3rem;
-    margin-top: 0.2rem;
-    line-height: 1;
-  }
-}
-
-/* MÓVIL (≤ 768px): aún más pequeño y sin posición fija */
+/* MÓVIL (≤ 768px) */
 @media (max-width: 768px) {
   .hero--fixed-parallax {
     background-attachment: scroll;
@@ -613,6 +617,15 @@ body.projects-page {
     transform: none;
     text-align: left;
     pointer-events: auto;
+
+    /* Mantener la animación en móvil pero ajustar el transform */
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  .hero-text.hero-visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 
   .hero-name {
@@ -629,5 +642,17 @@ body.projects-page {
     font-size: 1.5rem;
     margin-top: 0.25rem;
     line-height: 0.4;
+  }
+
+  /* Projects hero también en móvil */
+  .projects-hero-text {
+    position: absolute;
+    transform: translate(-50%, calc(-45% + 30px));
+    opacity: 0;
+  }
+
+  .projects-hero-text.hero-visible {
+    transform: translate(-50%, -45%);
+    opacity: 1;
   }
 }

@@ -22,12 +22,14 @@
 
     <!-- NAVBAR SIEMPRE ARRIBA -->
     <nav class="navbar navbar-projects">
-      <!-- Logo a la izquierda en escritorio -->
-      <img
-        src="assets/img/page_name1.png"
-        alt="Logo Ana"
-        class="nav-logo-image"
-      />
+      <!-- Logo a la izquierda en escritorio - clickeable -->
+      <a href="./index.html" class="nav-logo-link">
+        <img
+          src="assets/img/page_name1.png"
+          alt="Logo Ana"
+          class="nav-logo-image"
+        />
+      </a>
 
       <button class="nav-toggle" aria-label="Toggle navigation">
         <span></span>
@@ -55,14 +57,26 @@
       </div>
     </header>
 
+    <!-- FILTROS DE PROYECTOS -->
+    <section class="filters-section">
+      <div class="filters-container">
+        <button class="filter-btn active" data-filter="all">Show All</button>
+        <button class="filter-btn" data-filter="ux-ui">UX/UI</button>
+        <button class="filter-btn" data-filter="branding">Branding</button>
+        <button class="filter-btn" data-filter="editorial">Editorial</button>
+        <button class="filter-btn" data-filter="3d">3D</button>
+      </div>
+    </section>
+
     <section class="cards-section">
       <div class="cards-grid">
         <!-- COLUMNA IZQUIERDA -->
         <div class="cards-column left-column">
-          <!-- Project 3D Diorama -->
+          <!-- Project A 3D Diorama -->
           <article
-            class="card"
+            class="card fade-in-scroll"
             data-project="project-3d-diorama"
+            data-category="3d"
             data-images="assets/img/habitacion5.png, assets/img/habitacion3.png, assets/img/habitacion4.png, assets/img/habitacion2.png, assets/img/habitacion7.png"
           >
             <img src="assets/img/habitacion4.png" alt="" class="card-img" />
@@ -75,10 +89,11 @@
             </div>
           </article>
 
-          <!-- Project B -->
+          <!-- Project B VINILO -->
           <article
-            class="card"
+            class="card fade-in-scroll"
             data-project="project-b"
+            data-category="editorial"
             data-images="assets/img/vinilo1.png, assets/img/vinilo2.png, assets/img/vinilo3.png"
           >
             <img src="assets/img/vinilo1.png" alt="" class="card-img" />
@@ -89,18 +104,36 @@
             </div>
           </article>
 
-          <!-- Project C -->
+          <!-- Project C POSTALES -->
           <article
-            class="card"
+            class="card fade-in-scroll"
             data-project="project-c"
-            data-images="assets/img/proj1_a.png, assets/img/proj1_b.png, assets/img/proj1_c.png"
+            data-category="editorial"
+            data-images="assets/img/postal1.png, assets/img/postal2.png, assets/img/postal3.png, assets/img/postal4.png, assets/img/postal5.png"
           >
-            <img src="assets/img/miImagen.png" alt="" class="card-img" />
+            <img src="assets/img/postal3.1.png" alt="" class="card-img" />
 
             <div class="card-content">
-              <h3 class="card-title">Experimental piece</h3>
+              <h3 class="card-title">Postcards from the past</h3>
               <p class="card-text">
-                Creative test on composition and abstraction.
+                Digitally manipulated postcards exploring perception.
+              </p>
+            </div>
+          </article>
+
+          <!-- NUEVA: Project G HUERTOPIA -->
+          <article
+            class="card fade-in-scroll"
+            data-project="project-huertopia"
+            data-category="branding"
+            data-images="assets/img/huertopia1.png, assets/img/huertopia2.png, assets/img/huertopia3.png"
+          >
+            <img src="assets/img/huertopia1.png" alt="" class="card-img" />
+
+            <div class="card-content">
+              <h3 class="card-title">Huertopia</h3>
+              <p class="card-text">
+                Visual identity for university gardening club.
               </p>
             </div>
           </article>
@@ -108,9 +141,11 @@
 
         <!-- COLUMNA DERECHA -->
         <div class="cards-column right-column">
+          <!-- Project D BOOK -->
           <article
-            class="card"
+            class="card fade-in-scroll"
             data-project="project-d"
+            data-category="editorial"
             data-images="assets/img/Final_mockup1.png, assets/img/Final_mockup2.png, assets/img/Final_mockup3.png, assets/img/Final_mockup5.png"
           >
             <img src="assets/img/Final_mockup1.png" alt="" class="card-img" />
@@ -121,10 +156,12 @@
             </div>
           </article>
 
+          <!-- Project E MUESTRARIO -->
           <article
-            class="card"
+            class="card fade-in-scroll"
             data-project="project-e"
-            data-images="assets/img/muestrario2.png, assets/img/proj1_b.png"
+            data-category="branding"
+            data-images="assets/img/muestrario1.png, assets/img/muestrario_verde.jpg, assets/img/muestrario_rosa2.jpg"
           >
             <img src="assets/img/muestrario1.png" alt="" class="card-img" />
 
@@ -134,16 +171,33 @@
             </div>
           </article>
 
+          <!-- Project F JUGUETES -->
           <article
-            class="card"
+            class="card fade-in-scroll"
             data-project="project-f"
-            data-images="assets/img/proj1_a.png, assets/img/proj1_b.png, assets/img/proj1_c.png"
+            data-category="3d"
+            data-images="assets/img/juguetes2.png, assets/img/juguetes1.png, assets/img/juguetes3.png"
           >
-            <img src="assets/images/miImagen.png" alt="" class="card-img" />
+            <img src="assets/img/juguetes1.png" alt="" class="card-img" />
 
             <div class="card-content">
-              <h3 class="card-title">Título C</h3>
-              <p class="card-text">Descripción breve del proyecto.</p>
+              <h3 class="card-title">Window Display</h3>
+              <p class="card-text">3D toy storefront exploring nostalgia</p>
+            </div>
+          </article>
+
+          <!-- NUEVA: Project H SEASONAL CALENDAR -->
+          <article
+            class="card fade-in-scroll"
+            data-project="project-seasonal-calendar"
+            data-category="editorial branding"
+            data-images="assets/img/lamina0.png, assets/img/lamina1.png, assets/img/lamina2.png, assets/img/lamina3.png, assets/img/lamina4.png"
+          >
+            <img src="assets/img/lamina4.png" alt="" class="card-img" />
+
+            <div class="card-content">
+              <h3 class="card-title">Seasonal Calendar</h3>
+              <p class="card-text">Seasonal fruit calendar in watercolor.</p>
             </div>
           </article>
         </div>
@@ -152,42 +206,73 @@
 
     <!-- DETALLES COMPLETOS DE PROYECTOS — OCULTOS -->
     <div class="project-details" hidden>
-      <!-- 3D DIORAMA -->
+      <!-- Project A 3D DIORAMA -->
       <div id="project-3d-diorama">
         <h3>3D Diorama – full project</h3>
         <p>
-          This diorama is a stylised representation of my own room: a personal
-          space rebuilt in 3D to explore light, atmosphere and emotional
-          storytelling through composition.
-          <br /><br />
-          The project focuses on colour psychology, spatial rhythm and low-light
-          ambience to evoke a calm, late-evening mood.
+          This 3D diorama is a stylised reconstruction of my own room,
+          transformed into a personal space designed to explore light,
+          atmosphere, and emotional storytelling through composition. Rather
+          than aiming for realism, the project prioritises mood and
+          interpretation, using simplification and stylisation as expressive
+          tools. <br />
+          <br />The work focuses on color psychology, spatial rhythm, and
+          low-light ambience to evoke a calm, late-evening atmosphere. Lighting
+          is used as a narrative element, guiding the viewer's attention and
+          reinforcing a sense of intimacy and quietness. Subtle contrasts and
+          controlled shadows contribute to a contemplative mood, suggesting
+          moments of stillness and introspection. <br />
+          <br />Through careful arrangement of objects and intentional use of
+          color and light, the diorama translates a familiar environment into an
+          emotional landscape, highlighting how personal spaces can convey
+          memory, mood, and narrative beyond their physical form.
         </p>
       </div>
 
-      <!-- Project B -->
+      <!-- Project B VINILO -->
       <div id="project-b">
         <h3>Visual Exploration</h3>
         <p>
-          This project explores vinyl cover design through colour, form and
-          transparency, using interpolation and layered compositions to generate
-          a sense of movement. The graphic piece investigates the tension
-          between order and disorder, translating emotional growth and personal
-          development into a dynamic visual language. The final outcome is a
-          vinyl design for the single Kids by Current Joys.
+          This project explores vinyl cover design through color, form, and
+          transparency, using interpolation and layered compositions to create a
+          sense of movement and visual progression. The graphic system is built
+          around overlapping shapes and transitional elements that suggest
+          transformation rather than static form. <br />
+          <br />The design investigates the tension between order and disorder,
+          balancing structured layouts with more organic and unpredictable
+          visual interactions. Transparency and color blending play a key role
+          in this process, allowing elements to intersect and evolve,
+          reinforcing the idea of gradual change. <br />
+          <br />Conceptually, the piece translates emotional growth and personal
+          development into a dynamic visual language, where movement becomes a
+          metaphor for personal evolution. The final outcome is a vinyl cover
+          design for the single Kids by Current Joys, aligning the visual
+          identity with the themes of growth, transition, and introspection
+          present in the music.
         </p>
       </div>
 
-      <!-- Project C -->
+      <!-- Project C POSTALES-->
       <div id="project-c">
-        <h3>Experimental piece – full view</h3>
+        <h3>Postcards from the past</h3>
         <p>
-          A sequence of abstract compositions based on texture overlays,
-          chromatic harmony and non-literal storytelling.
+          This project consists of a series of postcards created through digital
+          image manipulation as part of an editorial design campaign. Each piece
+          explores the relationship between color, light, and composition, using
+          visual alterations to challenge the viewer's perception.
+          <br /><br />Grain was intentionally added to introduce texture and
+          depth, softening the digital finish and reinforcing a tactile, almost
+          printed quality. Color plays a central role in shaping mood and
+          meaning, while controlled lighting and compositional decisions guide
+          the eye and suggest multiple readings of the same image. <br />
+          <br />Rather than aiming for a fixed narrative, the postcards embrace
+          ambiguity and subjectivity, encouraging personal interpretation and
+          highlighting how perception can shift depending on visual context and
+          individual experience.
         </p>
       </div>
 
-      <!-- Project D -->
+      <!-- Project D LIBRO-->
       <div id="project-d">
         <h3>Special Edition Book Collection</h3>
         <p>
@@ -201,7 +286,7 @@
         </p>
       </div>
 
-      <!-- Project E -->
+      <!-- Project E MUESTRARIO -->
       <div id="project-e">
         <h3>Fabric Sample Book</h3>
         <p>
@@ -217,12 +302,68 @@
         </p>
       </div>
 
-      <!-- Project F -->
+      <!-- Project F JUGUETES-->
       <div id="project-f">
-        <h3>Título C – extended description</h3>
+        <h3>Window Display</h3>
         <p>
-          Extra details about this project: narrative choices, visual direction
-          and small technical insights.
+          This project consists of a 3D toy storefront designed to evoke a sense
+          of nostalgia through composition, color, and lighting. The scene is
+          built around real childhood toys, using familiar forms and visual
+          references to trigger emotional memory. <br />
+          <br />The work focuses on 3D modeling and scene composition in Cinema
+          4D, carefully arranging each element within a fixed structural frame:
+          the storefront window. The original structure of the display was
+          provided and could not be modified, establishing clear spatial
+          constraints that guided all compositional decisions. <br />
+          <br />Within these limitations, the project explores balance, rhythm,
+          and visual hierarchy, using color relationships and controlled
+          lighting to enhance depth and atmosphere. The final result emphasizes
+          how composition within a defined frame can shape mood, narrative, and
+          viewer engagement.
+        </p>
+      </div>
+
+      <!-- NUEVA: Project G HUERTOPIA -->
+      <div id="project-huertopia">
+        <h3>Huertopia</h3>
+        <p>
+          Huertopia is a visual identity project developed for a university club
+          focused on collective cultivation and connection with nature. The club
+          brings together students who participate in gardening activities as a
+          way to promote sustainability, collaboration, and well-being within an
+          academic environment. <br />
+          <br />The identity is built around a logo that integrates the visual
+          language of Universidad Europea de Madrid, reinforcing the club's
+          institutional affiliation while maintaining its own character. Color
+          selection plays a key role in referencing the club's main activity,
+          drawing directly from natural and organic tones associated with
+          cultivation and growth. <br />
+          <br />Subtle formal decisions and small visual cues embedded in the
+          logo reflect the club's core values, using shape and structure to
+          suggest community, care, and balance. The result is a flexible visual
+          system that communicates both its educational context and its strong
+          connection to nature.
+        </p>
+      </div>
+
+      <!-- NUEVA: Project H SEASONAL CALENDAR -->
+      <div id="project-seasonal-calendar">
+        <h3>Seasonal Calendar</h3>
+        <p>
+          This project consists of a series of hand-drawn illustrations that
+          represent the year through fruits and vegetables, using seasonality as
+          a natural way to structure time. The calendar is organised by seasons,
+          months, and categories, allowing the presence of specific produce to
+          indicate the time of year. <br />
+          <br />Watercolor is used as the main medium, reinforcing an organic
+          and intuitive visual language connected to nature and growth. The
+          softness of the technique supports a calm and approachable reading of
+          the information, while subtle variations in color and texture reflect
+          the changing rhythms of the year. <br />
+          <br />Rather than relying on conventional numerical markers, the
+          calendar uses fruits and vegetables as visual indicators of time,
+          encouraging an alternative and more sensory understanding of seasonal
+          cycles.
         </p>
       </div>
     </div>
@@ -272,35 +413,33 @@
           <div class="contact-socials">
             <!-- Instagram -->
             <a
-              href="https://instagram.com/ana.callejon"
+              href="https://instagram.com/calen.between"
               target="_blank"
               rel="noopener noreferrer"
               class="social-item"
             >
               <div class="social-icon">
-                <!-- Aquí puedes poner tu icono de Instagram -->
-                <!-- <img src="assets/img/instagram-icon.png" alt="Instagram"> -->
+                <img src="assets/img/insta1.png" alt="Instagram" />
               </div>
               <div class="social-info">
                 <div class="social-name">Instagram</div>
-                <div class="social-handle">@ana.callejon</div>
+                <div class="social-handle">@calen.between</div>
               </div>
             </a>
 
             <!-- LinkedIn -->
             <a
-              href="https://linkedin.com/in/ana-callejon"
+              href="https://www.linkedin.com/in/ana-callej%C3%B3n-al%C3%A9n-6879a02a6/"
               target="_blank"
               rel="noopener noreferrer"
               class="social-item"
             >
               <div class="social-icon">
-                <!-- Aquí puedes poner tu icono de LinkedIn -->
-                <!-- <img src="assets/img/linkedin-icon.png" alt="LinkedIn"> -->
+                <img src="assets/img/linkedin1.png" alt="LinkedIn" />
               </div>
               <div class="social-info">
                 <div class="social-name">LinkedIn</div>
-                <div class="social-handle">@ana.callejon</div>
+                <div class="social-handle">Ana Callejón Alén</div>
               </div>
             </a>
           </div>
@@ -314,11 +453,7 @@
               leave your info here and I'll get back to you :)
             </p>
 
-            <form
-              class="contact-form"
-              action="https://formspree.io/f/mrebapro"
-              method="POST"
-            >
+            <form class="contact-form">
               <label for="email" class="contact-label">Your email</label>
 
               <input

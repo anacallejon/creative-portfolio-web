@@ -1,4 +1,4 @@
-// JS principal para cursor personalizado, modales y navbar About
+// JS principal para cursor personalizado, modales, navbar y SCROLLYTELLING
 document.addEventListener("DOMContentLoaded", () => {
   // ==============================
   // CUSTOM CURSOR
@@ -77,7 +77,39 @@ document.addEventListener("DOMContentLoaded", () => {
   // MODAL DE PROYECTOS (projects.html)
   // ==============================
   if (document.body.classList.contains("projects-page")) {
+    // ===== FILTRADO DE PROYECTOS CON SOPORTE PARA MÚLTIPLES CATEGORÍAS =====
+    const filterBtns = document.querySelectorAll(".filter-btn");
     const cards = document.querySelectorAll(".card");
+
+    filterBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        // Actualizar botón activo
+        filterBtns.forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        const filter = btn.getAttribute("data-filter");
+
+        // Filtrar cards con soporte para múltiples categorías
+        cards.forEach((card) => {
+          const categories = card.getAttribute("data-category");
+
+          // Dividir las categorías por espacios para soportar múltiples
+          const categoryArray = categories
+            ? categories.trim().split(/\s+/)
+            : [];
+
+          if (filter === "all" || categoryArray.includes(filter)) {
+            card.classList.remove("hidden");
+            card.classList.add("show");
+          } else {
+            card.classList.remove("show");
+            card.classList.add("hidden");
+          }
+        });
+      });
+    });
+
+    // ===== MODAL DE PROYECTOS =====
     const backdrop = document.querySelector(".project-modal-backdrop");
     const modalText = document.querySelector(".project-modal-text");
     const modalImages = document.querySelector(".project-modal-images");
@@ -170,37 +202,179 @@ document.addEventListener("DOMContentLoaded", () => {
     window.scrollTo(0, 0);
   };
 
+  // ==============================
+  // NAVBAR HAMBURGUESA
+  // ==============================
   const navToggle = document.querySelector(".nav-toggle");
-  const navLinks = document.querySelector(".nav-links");
+  const navLinksMenu = document.querySelector(".nav-links");
   const overlay = document.querySelector(".nav-overlay");
 
-  if (!navToggle || !navLinks || !overlay) {
+  if (!navToggle || !navLinksMenu || !overlay) {
     console.warn("Falta nav-toggle, nav-links o nav-overlay en el HTML.");
-    return;
+  } else {
+    const closeMenu = () => {
+      navLinksMenu.classList.remove("nav-open");
+      navToggle.classList.remove("nav-open");
+      overlay.classList.remove("nav-open");
+      document.body.classList.remove("nav-open");
+    };
+
+    // Abrir/cerrar al clicar la hamburguesa
+    navToggle.addEventListener("click", () => {
+      const isOpen = navLinksMenu.classList.toggle("nav-open");
+      navToggle.classList.toggle("nav-open", isOpen);
+      overlay.classList.toggle("nav-open", isOpen);
+      document.body.classList.toggle("nav-open", isOpen);
+    });
+
+    // Cerrar al clicar un enlace
+    navLinksMenu.addEventListener("click", (event) => {
+      if (event.target.tagName.toLowerCase() === "a") {
+        closeMenu();
+      }
+    });
+
+    // Cerrar al clicar el fondo oscuro
+    overlay.addEventListener("click", closeMenu);
   }
 
-  const closeMenu = () => {
-    navLinks.classList.remove("nav-open");
-    navToggle.classList.remove("nav-open");
-    overlay.classList.remove("nav-open");
-    document.body.classList.remove("nav-open");
+  // ==============================
+  // SCROLLYTELLING EFFECTS
+  // ==============================
+
+  // ===== HERO INITIAL LOAD ANIMATION =====
+  const heroText = document.querySelector(".hero-text");
+  const projectsHeroText = document.querySelector(".projects-hero-text");
+
+  if (heroText) {
+    // Pequeño delay para que se note la animación
+    setTimeout(() => {
+      heroText.classList.add("hero-loaded");
+      heroText.classList.add("hero-visible");
+    }, 200);
+  }
+
+  if (projectsHeroText) {
+    // Pequeño delay para que se note la animación
+    setTimeout(() => {
+      projectsHeroText.classList.add("hero-loaded");
+      projectsHeroText.classList.add("hero-visible");
+    }, 200);
+  }
+
+  // ===== INTERSECTION OBSERVER - FADE IN ELEMENTS =====
+  const observerOptions = {
+    threshold: 0.15,
+    rootMargin: "0px 0px -100px 0px",
   };
 
-  // Abrir/cerrar al clicar la hamburguesa
-  navToggle.addEventListener("click", () => {
-    const isOpen = navLinks.classList.toggle("nav-open");
-    navToggle.classList.toggle("nav-open", isOpen);
-    overlay.classList.toggle("nav-open", isOpen);
-    document.body.classList.toggle("nav-open", isOpen);
+  const fadeObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("fade-in-visible");
+      }
+    });
+  }, observerOptions);
+
+  // Observar elementos con la clase 'fade-in-scroll'
+  const fadeElements = document.querySelectorAll(".fade-in-scroll");
+  fadeElements.forEach((el) => fadeObserver.observe(el));
+
+  // ===== SECTION TITLE SLIDE-IN EFFECT =====
+  const titleObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("slide-in-visible");
+        }
+      });
+    },
+    { threshold: 0.3 }
+  );
+
+  const sectionTitles = document.querySelectorAll(".section-title");
+  sectionTitles.forEach((title) => {
+    title.classList.add("slide-in-left");
+    titleObserver.observe(title);
   });
 
-  // Cerrar al clicar un enlace
-  navLinks.addEventListener("click", (event) => {
-    if (event.target.tagName.toLowerCase() === "a") {
-      closeMenu();
-    }
-  });
+  // ===== CAROUSEL ITEMS STAGGER ANIMATION =====
+  const carouselObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const items = entry.target.querySelectorAll(".carousel-item");
+          items.forEach((item, index) => {
+            setTimeout(() => {
+              item.classList.add("carousel-item-visible");
+            }, index * 50);
+          });
+          carouselObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
 
-  // Cerrar al clicar el fondo oscuro
-  overlay.addEventListener("click", closeMenu);
+  const carouselSections = document.querySelectorAll(".carousel-row");
+  carouselSections.forEach((section) => carouselObserver.observe(section));
+
+  // ===== ABOUT SECTION - SCALE IN EFFECT =====
+  const aboutObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("scale-in-visible");
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+
+  const aboutSection = document.querySelector(".about-section");
+  if (aboutSection) {
+    aboutSection.classList.add("scale-in");
+    aboutObserver.observe(aboutSection);
+  }
+
+  // ===== CONTACT BOX - FLOAT IN FROM BOTTOM =====
+  const contactObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("float-in-visible");
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+
+  const contactBox = document.querySelector(".contact-box");
+  if (contactBox) {
+    contactBox.classList.add("float-in-bottom");
+    contactObserver.observe(contactBox);
+  }
+
+  // ===== SCROLL HINT - DESAPARECE AL HACER SCROLL =====
+  const createScrollHint = () => {
+    const hero = document.querySelector(".hero");
+    if (!hero) return;
+
+    const hint = document.createElement("div");
+    hint.className = "scroll-hint";
+    hint.innerHTML = "↓ Scroll to explore ↓";
+    hero.appendChild(hint);
+
+    window.addEventListener("scroll", () => {
+      if (window.pageYOffset > 100) {
+        hint.style.opacity = "0";
+        hint.style.pointerEvents = "none";
+      } else {
+        hint.style.opacity = "1";
+        hint.style.pointerEvents = "auto";
+      }
+    });
+  };
+
+  createScrollHint();
 });

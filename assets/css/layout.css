@@ -132,13 +132,19 @@
 ----------------------------------------- */
 
 .nav-toggle {
-  display: none; /* solo se verá en móvil */
+  display: none;
   background: transparent;
   border: none;
   cursor: pointer;
   padding: 0;
-  margin-left: auto;
+  width: 30px;
+  height: 30px;
+  position: relative;
   z-index: 10001;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
 }
 
 .nav-toggle span {
@@ -146,31 +152,33 @@
   width: 24px;
   height: 2px;
   background-color: #cc1753;
-  border-radius: 999px;
-  transition: transform 0.25s ease, opacity 0.25s ease;
+  border-radius: 2px;
+  transition: all 0.3s ease;
 }
 
-.nav-toggle span + span {
-  margin-top: 6px;
+/* Estado abierto: X (cruz) */
+.nav-toggle.nav-open {
+  gap: 0;
 }
 
-/* Estado abierto: X */
 .nav-toggle.nav-open span:first-child {
-  transform: translateY(4px) rotate(45deg);
+  transform: rotate(45deg);
+  position: absolute;
 }
 
 .nav-toggle.nav-open span:last-child {
-  transform: translateY(-4px) rotate(-45deg);
+  transform: rotate(-45deg);
+  position: absolute;
 }
 
 /* ----------------------------------------
-   OVERLAY DEL MENÚ
+   OVERLAY DEL MENÚ (fondo oscuro)
 ----------------------------------------- */
 
 .nav-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(0, 0, 0, 0.5);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
@@ -189,66 +197,73 @@
 @media (max-width: 768px) {
   .navbar {
     padding: 0 20px;
-    justify-content: flex-end; /* solo la hamburguesa a la derecha */
   }
 
   /* Mostrar botón hamburguesa en móvil */
   .nav-toggle {
-    display: block;
-    margin-left: 0;
+    display: flex;
+    margin-left: auto;
   }
 
-  /* 🔴 IMPORTANTE: OCULTAR LOS LINKS EN LA BARRA NORMAL */
+  /* Links ocultos por defecto */
   .navbar .nav-links {
-    display: none; /* no ocupan espacio ni empujan nada */
+    display: none;
   }
 
-  /* 🔵 Cuando el menú está abierto, lo mostramos como panel que baja */
+  /* Panel del menú cuando está abierto */
   .navbar .nav-links.nav-open {
     display: flex;
     position: fixed;
-    top: 40px;
+    top: 0;
+    left: 0;
     right: 0;
 
-    height: 29vh; /* 1/3 del alto */
-    width: 100%; /* barra completa que cae */
-    max-width: none;
+    /* Panel que ocupa aproximadamente 1/3 del alto */
+    min-height: 35vh;
+    width: 100%;
 
-    background-color: #8b93bc;
+    background-color: #8b93bc; /* Cambiado de #e8eaf3 a morado */
 
     flex-direction: column;
     align-items: flex-start;
-    justify-content: flex-start; /* links pegados arriba */
-    padding: 1.8rem 1.6rem;
-    gap: 1.2rem;
+    justify-content: flex-start;
+    padding: 5rem 2rem 2rem 2rem;
+    gap: 1.5rem;
 
-    transform: translateY(0); /* ya visible */
-    transition: transform 0.35s ease-out;
+    /* Animación deslizante desde arriba */
+    transform: translateY(-100%);
+    animation: slideDown 0.4s ease forwards;
 
     z-index: 10000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  @keyframes slideDown {
+    to {
+      transform: translateY(0);
+    }
   }
 
   .navbar .nav-links.nav-open a {
-    font-size: 1rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #cc1753; /* Cambiado de #222 a blanco para contrastar con el morado */
+    padding: 0.5rem 0;
   }
 
-  /* bloquear scroll cuando el menú está abierto */
+  /* Bloquear scroll cuando el menú está abierto */
   body.nav-open {
     overflow: hidden;
   }
-}
 
-@media (max-width: 768px) {
-  /* Home: solo hamburguesa alineada a la derecha */
+  /* Ajustes específicos por página */
   .navbar-home {
     justify-content: flex-end;
   }
 
-  /* Projects & About: logo izq + hamburguesa dcha */
   .navbar-projects,
   .navbar-about {
     justify-content: space-between;
-    padding-top: 2rem;
   }
 }
 
@@ -447,15 +462,17 @@
   background-size: cover;
   background-repeat: no-repeat;
   color: #f7f5f0;
+  overflow: visible; /* Permitir que el blob se vea */
 }
 
 /* CONTENEDOR GENERAL: MAX WIDTH MUCHO MAYOR */
 .about-content {
   width: 100%;
   max-width: 1400px;
-  padding: 3rem 3rem;
+  padding: 4rem 3rem; /* Aumentado de 3rem a 4rem verticalmente */
   margin: 0 auto;
   box-sizing: border-box;
+  overflow: visible; /* Permitir que el blob se vea fuera del contenedor */
 }
 
 .about-title {
@@ -635,13 +652,13 @@ body.projects-page {
 
   .hero-tagline {
     font-size: 1.5rem;
-    margin-top: 0.5rem;
+    margin-top: 1rem; /* Aumentado de 0.5rem a 1rem */
   }
 
   .hero-job {
     font-size: 1.5rem;
-    margin-top: 0.25rem;
-    line-height: 0.4;
+    margin-top: 0.2rem; /* Reducido de 0.5rem a 0.2rem para acercar */
+    line-height: 1.2; /* Aumentado de 0.4 a 1.2 */
   }
 
   /* Projects hero también en móvil */

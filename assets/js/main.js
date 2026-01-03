@@ -113,6 +113,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const backdrop = document.querySelector(".project-modal-backdrop");
     const modalText = document.querySelector(".project-modal-text");
     const modalImages = document.querySelector(".project-modal-images");
+    const modalCloseBtn = document.querySelector(".project-modal-close");
+
+    // Función para cerrar el modal
+    const closeModal = () => {
+      backdrop.classList.remove("is-open");
+      document.body.classList.remove("modal-open");
+    };
 
     // Solo si existen todos los elementos necesarios
     if (backdrop && cards.length > 0 && modalText && modalImages) {
@@ -166,10 +173,14 @@ document.addEventListener("DOMContentLoaded", () => {
       // Cerrar modal haciendo click en el fondo oscuro
       backdrop.addEventListener("click", (e) => {
         if (e.target === backdrop) {
-          backdrop.classList.remove("is-open");
-          document.body.classList.remove("modal-open");
+          closeModal();
         }
       });
+
+      // Cerrar modal haciendo click en el botón X
+      if (modalCloseBtn) {
+        modalCloseBtn.addEventListener("click", closeModal);
+      }
     }
   }
 

@@ -10,9 +10,7 @@
   margin: 0 auto;
 }
 
-/* ----------------------------------------
-   NAVBAR — BASE PARA TODAS LAS PÁGINAS
------------------------------------------ */
+/* --------------------------NAVBAR — BASE PARA TODAS LAS PÁGINAS-------------------------- */
 
 .navbar {
   position: fixed;
@@ -46,7 +44,7 @@
   opacity: 0.7;
 }
 
-/* LOGO GENERAL (si lo usas) */
+/* LOGO GENERAL */
 .nav-logo-image {
   height: 1.5rem;
   object-fit: contain;
@@ -63,9 +61,7 @@
   opacity: 0.8;
 }
 
-/* ----------------------------------------
-   NAVBAR — HOME PAGE (index.html)
------------------------------------------ */
+/* -----------------------NAVBAR — HOME PAGE (index.html)--------------------------*/
 
 .navbar-home {
   justify-content: flex-end;
@@ -75,9 +71,7 @@
   justify-content: flex-end;
 }
 
-/* ----------------------------------------
-   NAVBAR — PROJECTS PAGE (projects.html)
------------------------------------------ */
+/* --------------------------NAVBAR — PROJECTS PAGE (projects.html)-------------------------------- */
 
 .navbar-projects {
   justify-content: space-between;
@@ -88,9 +82,7 @@
   margin-left: auto;
 }
 
-/* ----------------------------------------
-   NAVBAR — ABOUT PAGE (about.html)
------------------------------------------ */
+/* ------------------------------NAVBAR — ABOUT PAGE (about.html)--------------------------------- */
 
 .navbar-about {
   position: fixed;
@@ -127,9 +119,7 @@
   pointer-events: auto;
 }
 
-/* ----------------------------------------
-   BOTÓN HAMBURGUESA (base)
------------------------------------------ */
+/* ---------------------------BOTÓN HAMBURGUESA (base)---------------------------- */
 
 .nav-toggle {
   display: none;
@@ -171,9 +161,7 @@
   position: absolute;
 }
 
-/* ----------------------------------------
-   OVERLAY DEL MENÚ (fondo oscuro)
------------------------------------------ */
+/* ---------------------------------OVERLAY DEL MENÚ (fondo oscuro)-------------------------------------- */
 
 .nav-overlay {
   position: fixed;
@@ -190,9 +178,7 @@
   pointer-events: auto;
 }
 
-/* ----------------------------------------
-   NAVBAR — SOLO MÓVIL (≤768px)
------------------------------------------ */
+/* ---------------------------------NAVBAR — SOLO MÓVIL (≤768px)----------------------------------------- */
 
 @media (max-width: 768px) {
   .navbar {
@@ -267,9 +253,7 @@
   }
 }
 
-/* ----------------------------------------
-   NAVBAR — ESCRITORIO + TABLET (≥769px)
------------------------------------------ */
+/* -------------------------------------NAVBAR — ESCRITORIO + TABLET (≥769px)--------------------------------------- */
 
 @media (min-width: 769px) {
   .nav-toggle {
@@ -290,9 +274,7 @@
   }
 }
 
-/* ----------------------------------------
-   HERO
------------------------------------------ */
+/* ---------------------------------------HERO--------------------------------------- */
 
 .hero {
   position: relative;
@@ -383,7 +365,7 @@
   opacity: 0.9;
 }
 
-/* ===== TITLES (SECTION TITLES) ===== */
+/* ------ TITLES (SECTION TITLES) ------ */
 
 .section-title {
   font-family: "Unbounded", sans-serif;
@@ -410,7 +392,7 @@
   text-decoration: underline;
 }
 
-/* ----- FEATURED PROJECTS / CARRUSEL DOBLE ----- */
+/* ------ FEATURED PROJECTS / CARRUSEL DOBLE ------ */
 
 .intro-section {
   padding-top: 2rem;
@@ -442,9 +424,7 @@
   background-color: #ffffff;
 }
 
-/* ==============================
-   ABOUT SECTION (PARALLAX)
-   ============================== */
+/* -------------------------------ABOUT SECTION (PARALLAX)----------------------------------- */
 
 .about-section {
   position: relative;
@@ -517,9 +497,7 @@
   }
 }
 
-/* ==============================
-   FOOTER MINIMAL
-   ============================== */
+/* --------------------------------FOOTER MINIMAL-------------------------------- */
 
 .site-footer {
   padding: 4rem 0;
@@ -536,9 +514,7 @@
   margin: 0;
 }
 
-/* ============================================
-   TEXTO SOBRE EL PARALLAX — PROJECTS PAGE
-   ============================================ */
+/* ----------------------------TEXTO SOBRE EL PARALLAX — PROJECTS PAGE------------------------------ */
 
 .projects-hero-text {
   position: absolute;
@@ -591,7 +567,6 @@ body.projects-page {
   padding-top: 80px;
 }
 
-/* Asegúrate de que el hero tiene su altura y no márgenes raros */
 .top-parallax {
   height: 40vh;
   margin-top: 0;
@@ -610,9 +585,7 @@ body.projects-page {
   padding-bottom: 5rem;
 }
 
-/* ==============================
-   HERO RESPONSIVE - SOLO MÓVIL
-   ============================== */
+/* -------------------------HERO RESPONSIVE - SOLO MÓVIL---------------------------- */
 
 /* MÓVIL (≤ 768px) */
 @media (max-width: 768px) {

@@ -1,6 +1,4 @@
-/* =========================================================
-   COMPONENTES GENERALES
-   ========================================================= */
+/* ----------------COMPONENTES GENERALES------------------*/
 
 .btn {
   padding: 0.7rem 1.4rem;
@@ -10,7 +8,7 @@
 
 /* ====== CARRUSEL ANIMADO - TODAS LAS PANTALLAS ====== */
 
-/* Contenedor de las dos filas */
+/* Contenedor de dos filas */
 .carousel-double {
   display: flex;
   flex-direction: column;
@@ -108,9 +106,7 @@
   display: none !important;
 }
 
-/* ==============================
-   CARRUSEL RESPONSIVE
-   ============================== */
+/* ----------------CARRUSEL RESPONSIVE-----------------*/
 
 /* MÓVIL (≤ 768px) */
 @media (max-width: 768px) {
@@ -152,9 +148,7 @@
   background-color: transparent !important;
 }
 
-/* ==============================
-     CONTACT SECTION + GLASS BOX - DOS COLUMNAS
-     ============================== */
+/* -----------------CONTACT SECTION + GLASS BOX - DOS COLUMNAS------------------- */
 
 .contact-section {
   padding: 4rem 0;
@@ -196,7 +190,7 @@
   align-items: start;
 }
 
-/* ====== COLUMNA IZQUIERDA: REDES SOCIALES ====== */
+/* -------------COLUMNA IZQUIERDA: REDES SOCIALES -------------*/
 .contact-socials {
   display: flex;
   flex-direction: column;
@@ -260,7 +254,7 @@
   color: #444;
 }
 
-/* ====== COLUMNA DERECHA: FORMULARIO ====== */
+/* -----------COLUMNA DERECHA: FORMULARIO--------- */
 .contact-form-wrapper {
   display: flex;
   flex-direction: column;
@@ -336,13 +330,11 @@
   background-color: #a41342;
 }
 
-/* ==============================
-     TWO-COLUMN OFFSET CARDS
-     ============================== */
+/* ---------------------TWO-COLUMN OFFSET CARDS----------------------- */
 
-/* ===== FILTROS DE PROYECTOS ===== */
+/* -----------FILTROS DE PROYECTOS------------- */
 .filters-section {
-  padding: 3rem 0 2rem; /* Reducido de 3rem a 2rem el padding inferior */
+  padding: 3rem 0 2rem;
   background-color: transparent;
 }
 
@@ -564,11 +556,9 @@
   }
 }
 
-/* ============================================
-     AJUSTE DE ESPACIADO EN TARJETAS
-     ============================================ */
+/* ---------------------------AJUSTE DE ESPACIADO EN TARJETAS------------------------------ */
 
-/* Quitamos padding interno para bajar el contenido */
+/* Quita padding interno para bajar el contenido */
 .projects-page .card {
   padding-bottom: 0;
 }
@@ -587,9 +577,7 @@
   line-height: 1.3;
 }
 
-/* ============================================
-     MODAL DE PROYECTO — RELACIÓN 805:400
-     ============================================ */
+/* -------------------------------MODAL DE PROYECTO — RELACIÓN 805:400--------------------------------- */
 
 /* Fondo oscuro detrás (overlay) */
 .project-modal-backdrop {
@@ -616,7 +604,7 @@
   aspect-ratio: 805 / 400;
   width: min(95vw, 1600px);
   height: auto;
-  max-height: 90vh; /* Aumentado de 85vh a 90vh */
+  max-height: 90vh;
 
   background: rgba(178, 193, 237, 0.95);
   backdrop-filter: blur(18px);
@@ -627,7 +615,7 @@
   border: 1px solid rgba(255, 255, 255, 0.45);
   box-shadow: 0 14px 50px rgba(0, 0, 0, 0.25);
 
-  /* animación pequeño → grande */
+  /* animación pequeño a grande */
   transform: scale(0.9);
   opacity: 0;
   transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease;
@@ -824,7 +812,7 @@ body.projects-page.modal-open .navbar {
   z-index: -1;
   /* Formas orgánicas iniciales */
   border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-  animation: morphBlob 5s ease-in-out infinite;
+  animation: morphBlob 15s ease-in-out infinite;
   transition: background 0.3s ease;
 }
 
@@ -877,9 +865,7 @@ body.projects-page.modal-open .navbar {
   opacity: 1;
 }
 
-/* ===========================
-   EXPERIENCE HEADER (H1+GRID)
-   =========================== */
+/* ------------------EXPERIENCE HEADER (H1+GRID)-------------------- */
 
 .experience-header {
   padding: 5rem 0 3rem;
@@ -919,9 +905,7 @@ body.projects-page.modal-open .navbar {
   background-color: #e3e3e3;
 }
 
-/* ===========================
-     CONTENT BOXES (ABOUT/SKILLS/...)
-     =========================== */
+/* ------------------CONTENT BOXES (ABOUT/SKILLS/...)---------------------- */
 
 .content-box {
   position: relative;
@@ -1002,7 +986,7 @@ body.projects-page.modal-open .navbar {
   }
 }
 
-/* ==== ARREGLO ALINEACIÓN SKILLS CON ICONOS ==== */
+/* -------ARREGLO ALINEACIÓN SKILLS CON ICONOS------- */
 
 /* Columna de Technical and artistic skills */
 .skills-column-icons {
@@ -1033,9 +1017,7 @@ body.projects-page.modal-open .navbar {
   display: block;
 }
 
-/* ==============================
-   CONTACT RESPONSIVE – MOBILE ONLY
-   ============================== */
+/* -------------------CONTACT RESPONSIVE – MOBILE ONLY--------------------- */
 
 /* MÓVIL (≤ 768px) */
 @media (max-width: 768px) {
@@ -1102,9 +1084,7 @@ body.projects-page.modal-open .navbar {
   }
 }
 
-/* ==============================
-   SCROLLYTELLING EFFECTS - STYLES
-   ============================== */
+/* -----------------------SCROLLYTELLING EFFECTS - STYLES------------------------- */
 
 /* ===== SCROLL HINT ===== */
 .scroll-hint {
@@ -1139,7 +1119,7 @@ body.projects-page.modal-open .navbar {
   }
 }
 
-/* ===== FADE IN ELEMENTS ===== */
+/* ------- FADE IN ELEMENTS ------ */
 .fade-in-scroll {
   opacity: 0;
   transform: translateY(30px);
@@ -1151,7 +1131,7 @@ body.projects-page.modal-open .navbar {
   transform: translateY(0);
 }
 
-/* ===== SLIDE IN FROM LEFT ===== */
+/* ------- SLIDE IN FROM LEFT ------ */
 .slide-in-left {
   opacity: 0;
   transform: translateX(-50px);
@@ -1163,7 +1143,7 @@ body.projects-page.modal-open .navbar {
   transform: translateX(0);
 }
 
-/* ===== SCALE IN EFFECT ===== */
+/* ------- SCALE IN EFFECT ------ */
 .scale-in {
   opacity: 0;
   transform: scale(0.95);
@@ -1175,7 +1155,7 @@ body.projects-page.modal-open .navbar {
   transform: scale(1);
 }
 
-/* ===== FLOAT IN FROM BOTTOM ===== */
+/* ------- FLOAT IN FROM BOTTOM ------ */
 .float-in-bottom {
   opacity: 0;
   transform: translateY(60px);
@@ -1188,7 +1168,7 @@ body.projects-page.modal-open .navbar {
   transform: translateY(0);
 }
 
-/* ===== CAROUSEL ITEMS ANIMATION ===== */
+/* ------- CAROUSEL ITEMS ANIMATION ------ */
 .carousel-item {
   opacity: 0;
   transform: scale(0.9);
@@ -1200,7 +1180,7 @@ body.projects-page.modal-open .navbar {
   transform: scale(1);
 }
 
-/* ===== CONTENT BOX ANIMATION (para about.html) ===== */
+/* ------- CONTENT BOX ANIMATION (para about.html) ------ */
 .content-box.fade-in-scroll {
   opacity: 0;
   transform: translateY(40px) scale(0.98);
@@ -1230,7 +1210,7 @@ body.projects-page.modal-open .navbar {
   transition-delay: 0.4s;
 }
 
-/* ===== EXPERIENCE HEADER ANIMATION ===== */
+/* ------- EXPERIENCE HEADER ANIMATION ------ */
 .experience-header.fade-in-scroll {
   opacity: 0;
   transform: translateY(20px);
@@ -1242,7 +1222,7 @@ body.projects-page.modal-open .navbar {
   transform: translateY(0);
 }
 
-/* ===== HERO INITIAL LOAD ANIMATION ===== */
+/* ------- HERO INITIAL LOAD ANIMATION ------ */
 .hero-text {
   opacity: 0;
 }
@@ -1262,7 +1242,7 @@ body.projects-page.modal-open .navbar {
   }
 }
 
-/* ===== DESACTIVAR ANIMACIONES EN MÓVIL (rendimiento) ===== */
+/* ------- DESACTIVAR ANIMACIONES EN MÓVIL (rendimiento) ------ */
 @media (max-width: 768px) {
   .scroll-hint {
     display: none;
@@ -1298,9 +1278,7 @@ body.projects-page.modal-open .navbar {
   }
 }
 
-/* ==============================
-   404 ERROR PAGE
-   ============================== */
+/* ---------------------------404 ERROR PAGE--------------------------------- */
 
 .error-page {
   background-color: #8b93bc;
@@ -1314,7 +1292,7 @@ body.projects-page.modal-open .navbar {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 4rem 2rem; /* Reducido el padding superior sin navbar */
+  padding: 4rem 2rem;
   position: relative;
   overflow: hidden;
 }
@@ -1557,7 +1535,7 @@ body.projects-page.modal-open .navbar {
 /* Responsive - Móvil */
 @media (max-width: 768px) {
   .error-section {
-    padding: 3rem 1.5rem; /* Ajustado sin navbar */
+    padding: 3rem 1.5rem; /* Ajustado SIN navbar */
   }
 
   .error-number {

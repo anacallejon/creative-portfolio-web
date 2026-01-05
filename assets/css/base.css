@@ -20,9 +20,7 @@ body {
   line-height: 1.6;
 }
 
-/* =========================================
-   ESTILOS EXCLUSIVOS PÁGINA PROJECTS
-   ========================================= */
+/* ------------ESTILOS EXCLUSIVOS PÁGINA PROJECTS---------------- */
 
 /* Fondo azul SOLO para esta página */
 body.projects-page {
@@ -30,12 +28,12 @@ body.projects-page {
   min-height: 100vh;
 }
 
-/* Aseguramos que html permite que se vea el fondo del body */
+/* html permite que se vea el fondo del body */
 html {
   min-height: 100%;
 }
 
-/* Cualquier sección blanca aquí, la vaciamos de fondo */
+/* Cualquier sección blanca aquí */
 .projects-page .cards-section,
 .projects-page .site-footer,
 .projects-page .main-content {
@@ -63,7 +61,7 @@ ul {
 /* -------- VARIABLES GLOBALES -------- */
 :root {
   /* Tipografías */
-  --font-base: system-ui, sans-serif; /* luego lo cambiamos por la que uses */
+  --font-base: system-ui, sans-serif;
   --font-heading: system-ui, sans-serif;
 
   /* Colores principales (luego rellenamos) */

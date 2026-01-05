@@ -71,25 +71,34 @@
 
 /* MÓVIL (≤ 768px) */
 @media (max-width: 768px) {
-  .carousel-item {
-    flex: 0 0 280px;
-    height: 180px;
-    flex-shrink: 0;
+  .carousel-double {
+    gap: 1.5rem;
+  }
+
+  .carousel-row {
+    overflow: hidden;
+    width: 100vw;
+    margin: 0 -5vw;
   }
 
   .carousel-track {
     gap: 1rem;
   }
 
+  .carousel-item {
+    flex: 0 0 70vw;
+    height: 45vw;
+    flex-shrink: 0;
+  }
+
   .carousel-row--top .carousel-track {
-    animation: scroll-left 50s linear infinite;
+    animation: scroll-left 60s linear infinite;
   }
 
   .carousel-row--bottom .carousel-track {
-    animation: scroll-right 50s linear infinite;
+    animation: scroll-right 60s linear infinite;
   }
 }
-
 /* ===== OCULTAR CURSOR ORIGINAL - SOLO DESKTOP ===== */
 @media (min-width: 1025px) {
   html,

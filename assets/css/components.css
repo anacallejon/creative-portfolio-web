@@ -72,37 +72,21 @@
 /* MÓVIL (≤ 768px) */
 @media (max-width: 768px) {
   .carousel-item {
-    flex: 0 0 260px;
-    height: 170px;
+    flex: 0 0 280px;
+    height: 180px;
     flex-shrink: 0;
   }
 
-  /* Velocidad más lenta en móvil */
+  .carousel-track {
+    gap: 1rem;
+  }
+
   .carousel-row--top .carousel-track {
     animation: scroll-left 50s linear infinite;
   }
 
   .carousel-row--bottom .carousel-track {
     animation: scroll-right 50s linear infinite;
-  }
-}
-
-/* KEYFRAMES para las animaciones */
-@keyframes scroll-left {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-@keyframes scroll-right {
-  0% {
-    transform: translateX(-50%);
-  }
-  100% {
-    transform: translateX(0);
   }
 }
 
@@ -119,7 +103,6 @@
   }
 }
 
-/* Permitir cursor nativo en tablet y móvil */
 @media (max-width: 1024px) {
   html,
   body,
@@ -134,25 +117,6 @@
 
 ::-webkit-scrollbar {
   display: none !important;
-}
-
-/* ----------------CARRUSEL RESPONSIVE-----------------*/
-
-/* MÓVIL (≤ 768px) */
-@media (max-width: 768px) {
-  .carousel-item {
-    flex: 0 0 260px;
-    height: 170px;
-  }
-
-  /* Velocidad más rápida en móvil */
-  .carousel-row--top .carousel-track {
-    animation: scroll-left 25s linear infinite;
-  }
-
-  .carousel-row--bottom .carousel-track {
-    animation: scroll-right 25s linear infinite;
-  }
 }
 
 /* ===== CURSOR PERSONALIZADO ===== */
@@ -173,7 +137,6 @@
     opacity 0.15s ease;
 }
 
-/* Estado sobre links */
 .custom-cursor.is-link {
   background-color: transparent !important;
 }
@@ -185,24 +148,19 @@
   background: transparent;
 }
 
-/* Caja glass a ancho del viewport (menos márgenes laterales) */
 .contact-box {
   width: calc(100vw - 160px);
   margin: 0 auto;
   padding: 3rem 3rem;
   border-radius: 24px;
-
-  /* GLASSMORPHISM */
   background: #cbd1ea;
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border: 1px solid rgba(255, 255, 255, 0.45);
   box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
-
   box-sizing: border-box;
 }
 
-/* Título de la sección */
 .contact-title {
   text-align: left;
   margin-bottom: 2rem;
@@ -212,7 +170,6 @@
   font-size: 2rem;
 }
 
-/* Contenedor de dos columnas */
 .contact-content {
   display: grid;
   grid-template-columns: 30% 70%;
@@ -241,7 +198,6 @@
   opacity: 0.8;
 }
 
-/* Icono placeholder (cuadrado gris) */
 .social-icon {
   width: 50px;
   height: 50px;
@@ -261,7 +217,6 @@
   object-fit: contain;
 }
 
-/* Textos de la red social */
 .social-info {
   display: flex;
   flex-direction: column;
@@ -409,7 +364,6 @@
   border-color: #a41342;
 }
 
-/* Animación de cards al filtrar */
 .card.hidden {
   display: none;
 }
@@ -430,7 +384,6 @@
   }
 }
 
-/* Responsive filtros */
 @media (max-width: 768px) {
   .filters-section {
     padding: 2rem 0 1rem;
@@ -439,12 +392,10 @@
   .filters-container {
     gap: 0.7rem;
     padding: 0 1rem;
-    /* Hacer scrolleable horizontalmente */
     flex-wrap: nowrap;
     overflow-x: auto;
     overflow-y: hidden;
     justify-content: flex-start;
-    /* Ocultar scrollbar pero mantener funcionalidad */
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     -ms-overflow-style: none;
@@ -457,14 +408,13 @@
   .filter-btn {
     padding: 0.6rem 1.3rem;
     font-size: 0.75rem;
-    /* Evitar que se encojan */
     flex-shrink: 0;
     white-space: nowrap;
   }
 }
 
 .cards-section {
-  padding: 3rem 0 6rem 0; /* Reducido de 6rem a 3rem el padding superior */
+  padding: 3rem 0 6rem 0;
   background-color: white;
 }
 
@@ -476,7 +426,6 @@
   margin: 0 auto;
 }
 
-/* CARDS */
 .card {
   position: relative;
   padding: 0;
@@ -496,14 +445,11 @@
 .projects-page .card {
   position: relative;
   border-radius: 20px;
-
-  /* GLASSMORPHISM */
   background: rgba(255, 255, 255, 0.22);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.35);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
-
   overflow: hidden;
   padding-bottom: 20px;
 }
@@ -540,7 +486,6 @@
   color: #222;
 }
 
-/* Alineaciones */
 .left-column .card-title,
 .left-column .card-text {
   text-align: left;
@@ -551,7 +496,6 @@
   text-align: right;
 }
 
-/* TIPOGRAFÍAS */
 .card-title {
   font-family: "Unbounded", sans-serif;
   font-weight: 600;
@@ -568,7 +512,6 @@
   font-size: 0.8rem;
 }
 
-/* RESPONSIVE - SOLO MÓVIL */
 @media (max-width: 768px) {
   .cards-grid {
     grid-template-columns: 1fr;
@@ -586,14 +529,10 @@
   }
 }
 
-/* ---------------------------AJUSTE DE ESPACIADO EN TARJETAS------------------------------ */
-
-/* Quita padding interno para bajar el contenido */
 .projects-page .card {
   padding-bottom: 0;
 }
 
-/* Contenido más pegado a la parte inferior */
 .projects-page .card-content {
   padding: 0.8rem 1.2rem 1rem;
 }
@@ -609,7 +548,6 @@
 
 /* -------------------------------MODAL DE PROYECTO — RELACIÓN 805:400--------------------------------- */
 
-/* Fondo oscuro detrás (overlay) */
 .project-modal-backdrop {
   position: fixed;
   inset: 0;
@@ -617,7 +555,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 8vh; /* Más abajo */
+  padding-top: 8vh;
   opacity: 0;
   pointer-events: none;
   z-index: 9998;
@@ -629,13 +567,11 @@
   pointer-events: auto;
 }
 
-/* Ventana modal (relleno sólido + glass) */
 .project-modal {
   aspect-ratio: 805 / 400;
   width: min(95vw, 1600px);
   height: auto;
   max-height: 90vh;
-
   background: rgba(178, 193, 237, 0.95);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
@@ -644,14 +580,11 @@
   box-sizing: border-box;
   border: 1px solid rgba(255, 255, 255, 0.45);
   box-shadow: 0 14px 50px rgba(0, 0, 0, 0.25);
-
-  /* animación pequeño a grande */
   transform: scale(0.9);
   opacity: 0;
   transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease;
-
   position: relative;
-  overflow-y: auto; /* Scrolleable */
+  overflow-y: auto;
 }
 
 .project-modal-backdrop.is-open .project-modal {
@@ -659,11 +592,10 @@
   opacity: 1;
 }
 
-/* Botón X para cerrar - más pegado en desktop/tablet */
 .project-modal-close {
   position: absolute;
-  top: 0.8rem; /* Más pegado */
-  right: 0.8rem; /* Más pegado */
+  top: 0.8rem;
+  right: 0.8rem;
   width: 32px;
   height: 32px;
   background: transparent;
@@ -699,7 +631,6 @@
   background-color: #a41342;
 }
 
-/* --- Interior: dos columnas (texto izq, imágenes dcha) --- */
 .project-modal-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -707,14 +638,12 @@
   min-height: 100%;
 }
 
-/* Columna izquierda: título y texto */
 .project-modal-text {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
 
-/* usamos las mismas clases clonadas desde la card */
 .project-modal-text .card-title {
   font-family: "Unbounded", sans-serif;
   font-weight: 600;
@@ -733,14 +662,12 @@
   text-align: left;
 }
 
-/* Columna derecha: varias imágenes */
 .project-modal-images {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-/* Cada imagen mantiene la relación 805:400 */
 .project-modal-images img {
   width: 100%;
   aspect-ratio: 805 / 400;
@@ -749,19 +676,16 @@
   background: #ddd;
 }
 
-/* Evitar scroll del fondo */
 body.projects-page.modal-open {
   overflow: hidden;
 }
 
-/* NAVBAR oscurecida mientras el modal está abierto */
 body.projects-page.modal-open .navbar {
   background-color: rgba(178, 193, 237, 0.75) !important;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 }
 
-/* Responsive - Solo móvil */
 @media (max-width: 768px) {
   .project-modal {
     width: 90vw;
@@ -785,7 +709,6 @@ body.projects-page.modal-open .navbar {
     min-height: auto;
   }
 
-  /* Texto arriba */
   .project-modal-text {
     overflow: visible;
   }
@@ -801,7 +724,6 @@ body.projects-page.modal-open .navbar {
     line-height: 1.5;
   }
 
-  /* Imágenes abajo */
   .project-modal-images {
     gap: 0.8rem;
   }
@@ -832,15 +754,12 @@ body.projects-page.modal-open .navbar {
   transition: transform 0.3s ease;
 }
 
-/* Blob orgánico de fondo - mismo tamaño que el botón */
 .about-btn::before {
   content: "";
   position: absolute;
-  /* Exactamente el mismo tamaño que el botón */
   inset: 0;
   background: #cc1753;
   z-index: -1;
-  /* Formas orgánicas iniciales */
   border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
   animation: morphBlob 15s ease-in-out infinite;
   transition: background 0.3s ease;
@@ -855,7 +774,6 @@ body.projects-page.modal-open .navbar {
   transform: translateY(-3px);
 }
 
-/* Animación blob orgánica con variaciones extremas */
 @keyframes morphBlob {
   0% {
     border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
@@ -883,7 +801,6 @@ body.projects-page.modal-open .navbar {
   }
 }
 
-/* ICONO DENTRO DEL BOTÓN */
 .about-btn-icon {
   width: 14px;
   height: 14px;
@@ -943,11 +860,9 @@ body.projects-page.modal-open .navbar {
   margin: 70px auto;
   padding: 32px 40px 28px;
   border-radius: 12px;
-
   background: #cbd1ea;
   border: 1px solid #f2f2f2;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
-
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
@@ -972,7 +887,6 @@ body.projects-page.modal-open .navbar {
   color: #333333;
 }
 
-/* columnas dentro de skills */
 .box-columns {
   display: flex;
   flex-wrap: wrap;
@@ -1000,7 +914,6 @@ body.projects-page.modal-open .navbar {
   color: #333333;
 }
 
-/* responsive - Solo móvil */
 @media (max-width: 768px) {
   .experience-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1018,20 +931,17 @@ body.projects-page.modal-open .navbar {
 
 /* -------ARREGLO ALINEACIÓN SKILLS CON ICONOS------- */
 
-/* Columna de Technical and artistic skills */
 .skills-column-icons {
   padding-left: 0;
   margin-left: 0;
 }
 
-/* Quitamos la sangría típica del ul SOLO aquí */
 .skills-column-icons .skills-icon-list {
   margin-left: 0;
   padding-left: 0;
   list-style: none;
 }
 
-/* Cada línea: icono + texto, alineados con el título */
 .skills-column-icons .skills-icon-list li {
   display: flex;
   align-items: center;
@@ -1039,7 +949,6 @@ body.projects-page.modal-open .navbar {
   margin-bottom: 0.45rem;
 }
 
-/* Icono del alto de la línea aproximadamente */
 .skills-column-icons .skill-icon {
   height: 0.8em;
   width: auto;
@@ -1049,7 +958,6 @@ body.projects-page.modal-open .navbar {
 
 /* -------------------CONTACT RESPONSIVE – MOBILE ONLY--------------------- */
 
-/* MÓVIL (≤ 768px) */
 @media (max-width: 768px) {
   .contact-section {
     padding: 3rem 1.4rem;
@@ -1061,19 +969,16 @@ body.projects-page.modal-open .navbar {
     border-radius: 18px;
   }
 
-  /* Una sola columna en móvil */
   .contact-content {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
 
-  /* Redes sociales primero, arriba */
   .contact-socials {
     order: 1;
     gap: 1.5rem;
   }
 
-  /* Formulario después, abajo */
   .contact-form-wrapper {
     order: 2;
     padding-right: 0;
@@ -1116,7 +1021,6 @@ body.projects-page.modal-open .navbar {
 
 /* -----------------------SCROLLYTELLING EFFECTS - STYLES------------------------- */
 
-/* ===== SCROLL HINT ===== */
 .scroll-hint {
   position: absolute;
   bottom: -30px;
@@ -1149,7 +1053,6 @@ body.projects-page.modal-open .navbar {
   }
 }
 
-/* ------- FADE IN ELEMENTS ------ */
 .fade-in-scroll {
   opacity: 0;
   transform: translateY(30px);
@@ -1161,7 +1064,6 @@ body.projects-page.modal-open .navbar {
   transform: translateY(0);
 }
 
-/* ------- SLIDE IN FROM LEFT ------ */
 .slide-in-left {
   opacity: 0;
   transform: translateX(-50px);
@@ -1173,7 +1075,6 @@ body.projects-page.modal-open .navbar {
   transform: translateX(0);
 }
 
-/* ------- SCALE IN EFFECT ------ */
 .scale-in {
   opacity: 0;
   transform: scale(0.95);
@@ -1185,7 +1086,6 @@ body.projects-page.modal-open .navbar {
   transform: scale(1);
 }
 
-/* ------- FLOAT IN FROM BOTTOM ------ */
 .float-in-bottom {
   opacity: 0;
   transform: translateY(60px);
@@ -1198,7 +1098,6 @@ body.projects-page.modal-open .navbar {
   transform: translateY(0);
 }
 
-/* ------- CAROUSEL ITEMS ANIMATION ------ */
 .carousel-item {
   opacity: 0;
   transform: scale(0.9);
@@ -1210,7 +1109,6 @@ body.projects-page.modal-open .navbar {
   transform: scale(1);
 }
 
-/* ------- CONTENT BOX ANIMATION (para about.html) ------ */
 .content-box.fade-in-scroll {
   opacity: 0;
   transform: translateY(40px) scale(0.98);
@@ -1223,7 +1121,6 @@ body.projects-page.modal-open .navbar {
   transform: translateY(0) scale(1);
 }
 
-/* Efecto stagger: retraso progresivo entre cajas */
 .content-box.fade-in-scroll:nth-child(2) {
   transition-delay: 0.1s;
 }
@@ -1240,7 +1137,6 @@ body.projects-page.modal-open .navbar {
   transition-delay: 0.4s;
 }
 
-/* ------- EXPERIENCE HEADER ANIMATION ------ */
 .experience-header.fade-in-scroll {
   opacity: 0;
   transform: translateY(20px);
@@ -1252,7 +1148,6 @@ body.projects-page.modal-open .navbar {
   transform: translateY(0);
 }
 
-/* ------- HERO INITIAL LOAD ANIMATION ------ */
 .hero-text {
   opacity: 0;
 }
@@ -1272,13 +1167,11 @@ body.projects-page.modal-open .navbar {
   }
 }
 
-/* ------- DESACTIVAR ANIMACIONES EN MÓVIL (rendimiento) ------ */
 @media (max-width: 768px) {
   .scroll-hint {
     display: none;
   }
 
-  /* Simplificar animaciones en móvil */
   .fade-in-scroll,
   .slide-in-left,
   .scale-in,
@@ -1286,12 +1179,10 @@ body.projects-page.modal-open .navbar {
     transition-duration: 0.4s;
   }
 
-  /* Eliminar delays en móvil para mejor rendimiento */
   .content-box.fade-in-scroll:nth-child(n) {
     transition-delay: 0s;
   }
 
-  /* Hero animación diferente en móvil */
   .hero-text.hero-loaded {
     animation: heroFadeInMobile 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
@@ -1343,7 +1234,6 @@ body.projects-page.modal-open .navbar {
   opacity: 0;
   animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards,
     colorChange 12s ease-in-out infinite;
-  /* Gradiente suave que se mueve */
   background: linear-gradient(
     90deg,
     #cc1753 0%,
@@ -1363,19 +1253,19 @@ body.projects-page.modal-open .navbar {
     background-position: 0% 0%;
   }
   20% {
-    background-position: 0% 0%; /* Mantiene rosa */
+    background-position: 0% 0%;
   }
   40% {
-    background-position: 100% 0%; /* Transición a azul */
+    background-position: 100% 0%;
   }
   60% {
-    background-position: 100% 0%; /* Mantiene azul */
+    background-position: 100% 0%;
   }
   80% {
-    background-position: 0% 0%; /* Transición a rosa */
+    background-position: 0% 0%;
   }
   100% {
-    background-position: 0% 0%; /* Mantiene rosa */
+    background-position: 0% 0%;
   }
 }
 
@@ -1452,7 +1342,6 @@ body.projects-page.modal-open .navbar {
   object-fit: contain;
 }
 
-/* Decoración con blobs orgánicos */
 .error-decoration {
   position: absolute;
   inset: 0;
@@ -1562,10 +1451,9 @@ body.projects-page.modal-open .navbar {
   }
 }
 
-/* Responsive - Móvil */
 @media (max-width: 768px) {
   .error-section {
-    padding: 3rem 1.5rem; /* Ajustado SIN navbar */
+    padding: 3rem 1.5rem;
   }
 
   .error-number {

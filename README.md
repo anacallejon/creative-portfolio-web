@@ -17,6 +17,28 @@ A fully responsive portfolio website featuring my design projects across editori
 
 **Fonts:** Unbounded and Petit Formal Script from Google Fonts
 
+## Design System
+
+### Color Palette
+
+| Color                  | Hex       | RGB                  | Usage                           |
+| ---------------------- | --------- | -------------------- | ------------------------------- |
+| **Primary Pink**       | `#cc1753` | `rgb(204, 23, 83)`   | Main accent color, links, CTAs  |
+| **Primary Purple**     | `#8b93bc` | `rgb(139, 147, 188)` | Navbar, secondary elements      |
+| **Secondary Lavender** | `#b2c1ed` | `rgb(178, 193, 237)` | Backgrounds, cards              |
+| **Light Blue**         | `#cbd1ea` | `rgb(203, 209, 234)` | Glassmorphism effects, overlays |
+
+### Typography
+
+- **Primary Font:** [Unbounded](https://fonts.google.com/specimen/Unbounded)
+
+  - Weights: Light (200), Regular (400), Medium (500), SemiBold (600), Bold (700)
+  - Usage: Body text, headings, UI elements
+
+- **Accent Font:** [Petit Formal Script](https://fonts.google.com/specimen/Petit+Formal+Script)
+  - Weight: Regular (400)
+  - Usage: Decorative headings, taglines
+
 ## Project Structure
 
 ```
@@ -111,6 +133,35 @@ All AI-generated code was reviewed and modified before implementation. The detai
 ## License
 
 MIT License. See LICENSE file for details.
+
+## Screenshots
+
+### Hero Section
+
+<p align="center">
+  <img src="https://ik.imagekit.io/anacallejon/img/screenshots/hero1.png" alt="Hero Desktop" width="49%">
+  <img src="https://ik.imagekit.io/anacallejon/img/screenshots/hero2.png" alt="Hero Mobile" width="49%">
+</p>
+
+### Projects Grid
+
+<p align="center">
+  <img src="https://ik.imagekit.io/anacallejon/img/screenshots/projects1.png" alt="Projects Desktop" width="49%">
+  <img src="https://ik.imagekit.io/anacallejon/img/screenshots/projects2.png" alt="Projects Mobile" width="49%">
+</p>
+
+### About Section
+
+<p align="center">
+  <img src="https://ik.imagekit.io/anacallejon/img/screenshots/about1.png" alt="About Desktop" width="49%">
+  <img src="https://ik.imagekit.io/anacallejon/img/screenshots/about2.png" alt="About Mobile" width="49%">
+</p>
+
+### Contact Form
+
+<p align="center">
+  <img src="https://ik.imagekit.io/anacallejon/img/screenshots/contact1.png" alt="Contact Section" width="100%">
+</p>
 
 ## Contact
 

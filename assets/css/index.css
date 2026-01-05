@@ -2,24 +2,3 @@
 @import url("./layout.css");
 @import url("./components.css");
 @import url("../js/main.js");
-
-/* Estilos graficos
-COLORES, TIPOGRAFÍAS, ETC:
-
-------COLORES PRINCIPALES------
-color principal: #cc1753 (rosa fuerte)
-                    rgb 204, 23, 83
-color principal 2: #8b93bc (lila suave)
-                    rgb 139, 147, 188
-color secundario: #b2c1ed (lila muy suave)
-                    rgb 178, 193, 237
-color secundario 2: #cbd1ea (azul clarito)
-                    rgb 203, 209, 234
-
-
-------TIPOGRAFÍAS------
-Tipografía principal: Unbounded in Light, Regular, Medium, SemiBold y Bold
-Tipografía de acento: Petit Formal Script en Regular
-
-
-*/
